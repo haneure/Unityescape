@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: f52d298d05804a64880dd4f731a9cc6b
+  - enabled: 1
+    path: Assets/Scenes/Old Sea Port.unity
+    guid: e3dc763260288be4bac1a6cd8605b4e8
   m_configObjects: {}

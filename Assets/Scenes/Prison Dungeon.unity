@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -22919,6 +22919,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294494423}
   m_Mesh: {fileID: 4300000, guid: fd75e63c14c4540438372a6844af68b6, type: 3}
+--- !u!1 &298485530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1941340846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &298485537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298485530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3babe529e545c2e498e8495c91323d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  interactImage: {fileID: 631720148}
+  defaultIcon: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
+  defaultInteractIcon: {fileID: 21300000, guid: 3268852ed04b1324ab2d311982c0d3b9, type: 3}
+  defaultIconSize: {x: 50, y: 50}
+  defaultInteractIconSize: {x: 1000, y: 1000}
 --- !u!1001 &298876366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102986,7 +103011,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   ID: 0
-  interactIcon: {fileID: 0}
+  interactIcon: {fileID: 21300000, guid: 3268852ed04b1324ab2d311982c0d3b9, type: 3}
   iconSize: {x: 0, y: 0}
 --- !u!1001 &1656197384
 PrefabInstance:

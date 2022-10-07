@@ -7,6 +7,7 @@ using TMPro;
 public class UI_Inventory : MonoBehaviour
 {
     public Inventory inventory;
+    public bool updateInventory = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +24,22 @@ public class UI_Inventory : MonoBehaviour
             foreach(var item in inventory.inventory) {
                 GameObject inventorySlot = gameObject.transform.GetChild(i).gameObject;
 
-                TextMeshProUGUI text = inventorySlot.transform.GetChild(i).GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI text = inventorySlot.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                 text.text = item.name;
                 i++;
             }
         } else {
             
+        }
+
+        if(updateInventory) {
+            for(int z = 0; z < 5; z++) {
+                GameObject inventorySlot = gameObject.transform.GetChild(z).gameObject;
+
+                TextMeshProUGUI text = inventorySlot.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                text.text = "";
+            }
+            updateInventory = false;
         }
         
         Debug.Log(inventory.inventory.Count);
@@ -41,9 +52,21 @@ public class UI_Inventory : MonoBehaviour
                 Debug.Log("To be deleted: " + item.name);
                 GameObject inventorySlot = gameObject.transform.GetChild(i).gameObject;
 
-                TextMeshProUGUI text = inventorySlot.transform.GetChild(i).GetComponent<TextMeshProUGUI>();
+                TextMeshProUGUI text = inventorySlot.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                 text.text = "";
                 inventory.inventory.RemoveAt(i);
+
+                List<GameObject> newInventory = new List<GameObject>();
+                int j = 0;
+                foreach(var items in inventory.inventory) {
+                    newInventory.Insert(j, items);
+                    j++;
+                    Debug.Log(items.name);
+                }
+
+                inventory.inventory = newInventory;
+                updateInventory = true;
+                
                 break;
             } else {
                 i++;

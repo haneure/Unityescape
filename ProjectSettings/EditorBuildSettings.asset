@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: f52d298d05804a64880dd4f731a9cc6b
+  - enabled: 1
+    path: Assets/Scenes/Old Sea Port.unity
+    guid: e3dc763260288be4bac1a6cd8605b4e8
+  - enabled: 1
+    path: Assets/Scenes/Prison Dungeon/1.InsideJail.unity
+    guid: d39f3e683be412640b84d26a3d59c533
+  - enabled: 1
+    path: Assets/Scenes/Prison Dungeon/2.OutsideJail.unity
+    guid: aa2389549c8e5c64a8cd96c00e59b372
   m_configObjects: {}

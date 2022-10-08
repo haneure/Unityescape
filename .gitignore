@@ -16,6 +16,7 @@
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
+/UserSettings/EditorUserSettings.asset
 
 # Assets yang banyak dan ukurannya gede ditambah dibawah ini foldernya ***********
 /[Aa]ssets/Old Sea Port/

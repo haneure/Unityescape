@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class t_key : MonoBehaviour
 {
-    public Inventory inventory;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +13,10 @@ public class t_key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+   
     }
 
     public void pickUp(GameObject item) {
-        inventory.insertToInventory(item);
+        // inventory.insertToInventory(item);
     }
 }

@@ -11,7 +11,7 @@ public class UI_Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GameObject.Find("FirstPersonController").GetComponent<Inventory>();
+        inventory = GameObject.Find("Player").GetComponent<Inventory>();
         // Panel panel = gameObject.GetComponentInChildren();
     }
 
@@ -42,7 +42,7 @@ public class UI_Inventory : MonoBehaviour
             updateInventory = false;
         }
         
-        Debug.Log(inventory.inventory.Count);
+        // Debug.Log(inventory.inventory.Count);
     }
 
     public void deleteFromInventory(string deleteItem) {

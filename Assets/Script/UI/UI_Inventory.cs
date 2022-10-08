@@ -12,6 +12,7 @@ public class UI_Inventory : MonoBehaviour
     void Start()
     {
         inventory = GameObject.Find("Player").GetComponent<Inventory>();
+        Debug.Log(inventory);
         // Panel panel = gameObject.GetComponentInChildren();
     }
 
@@ -42,7 +43,7 @@ public class UI_Inventory : MonoBehaviour
             updateInventory = false;
         }
         
-        // Debug.Log(inventory.inventory.Count);
+        Debug.Log(inventory.inventory.Count);
     }
 
     public void deleteFromInventory(string deleteItem) {

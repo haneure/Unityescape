@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class t_jailbar : MonoBehaviour
 {
@@ -35,8 +36,13 @@ public class t_jailbar : MonoBehaviour
         if(haveKey) {
             keyhole.SetActive(false);
             inventori.deleteFromInventory("rust_key");
+            nextScene();
         } else {
             Debug.Log("Kamu tidak punya kunci");
         }
+    }
+
+    public void nextScene() {
+        SceneManager.LoadScene("2.OutsideJail");
     }
 }

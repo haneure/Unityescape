@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class t_jailbar : MonoBehaviour
+public class t_jailbar3 : MonoBehaviour
 {
-    Inventory inventory;
+    public Inventory inventory;
     public bool haveKey = false;
     GameObject keyhole;
     public UI_Inventory inventori;
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GameObject.Find("FirstPersonController").GetComponent<Inventory>();
+        // inventory = GameObject.Find("Player").GetComponent<Inventory>();
         keyhole = this.gameObject;
         Debug.Log(inventori.inventory);
     }
@@ -24,7 +25,7 @@ public class t_jailbar : MonoBehaviour
 
     public void openJailbar() {
         foreach(var item in inventory.inventory) {
-            if(item.name == "rust_key"){
+            if(item.name == "rust_key3"){
                 haveKey = true;
             } else {
                 Debug.Log("rust_key is not in your inventory");
@@ -34,9 +35,14 @@ public class t_jailbar : MonoBehaviour
 
         if(haveKey) {
             keyhole.SetActive(false);
-            inventori.deleteFromInventory("rust_key");
+            inventori.deleteFromInventory("rust_key3");
+            // nextScene();
         } else {
             Debug.Log("Kamu tidak punya kunci");
         }
     }
+
+    // public void nextScene() {
+    //     SceneManager.LoadScene("2.OutsideJail");
+    // }
 }

@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Old Sea Port.unity
     guid: e3dc763260288be4bac1a6cd8605b4e8
+  - enabled: 1
+    path: Assets/Scenes/Prison Dungeon/1.InsideJail.unity
+    guid: d39f3e683be412640b84d26a3d59c533
+  - enabled: 1
+    path: Assets/Scenes/Prison Dungeon/2.OutsideJail.unity
+    guid: 9a73f614d3a02db45a924b7cee1298b5
+  - enabled: 1
+    path: Assets/Scenes/Prison Dungeon/3.DownstairJail.unity
+    guid: e0c9f60a9328aea46a961cfd107e02b4
+  - enabled: 1
+    path: Assets/Scenes/Prison Dungeon/4.DeepTunnel.unity
+    guid: 45d3a0732d400794bbff349f7bffdf7b
   m_configObjects: {}

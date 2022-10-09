@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {   
-    public string playGame = "Old Sea Port";
+    public string playGame = "1.InsideJail";
     // // Start is called before the first frame update
     // void Start()
     // {

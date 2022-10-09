@@ -36,6 +36,8 @@ public class Guard : MonoBehaviour
     public bool stunned;
     public int stunTime;
 
+    public collidergameover gameOverEvent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +54,9 @@ public class Guard : MonoBehaviour
 
             if(!stunned){
                 if(playerDetector.playerTouched) {
-                    Debug.Log("Game Over");
+                    gameOverEvent.showGameOverUI();
+                    playerDetector.playerTouched = false;
+                
                 }
             }
         

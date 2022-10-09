@@ -31,7 +31,7 @@ public class FieldOfView : MonoBehaviour
         Vector3 posTarget = new Vector3(playerRef.transform.position.x, this.transform.position.y, playerRef.transform.position.z);
         if(canSeePlayer) {
             Vector3 posPoint = posTarget - this.transform.position;
-            // this.transform.rotation = Quaternion.LookRotation(posPoint);
+            this.transform.rotation = Quaternion.LookRotation(posPoint);
         }
     }
 

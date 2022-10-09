@@ -32,7 +32,7 @@ public class t_collider : MonoBehaviour
                 hint_ctrl.text = "Hold right click to Aim";
             }
             if(Input.GetKeyUp(KeyCode.Mouse1) ) {
-                hint_ctrl.text = "The guard has gone, but stay alert! He could come back sooner or later! Look at your surroundings, try to find something usefull and make your way out of here!";
+                hint_ctrl.text = "The guard is always patrolling, but stay alert! He could come back sooner or later! Look at your surroundings, analyze, try to find something usefull and make your way out of here!";
                 showRocksHints.gameObject.SetActive(true);
                 h_showCTRL = false;
             }

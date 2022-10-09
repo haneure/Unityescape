@@ -14,7 +14,7 @@ public class t_collider : MonoBehaviour
     bool showCTRLEvent = true;
     int onetime;
 
-    bool tutorial = false;
+    // bool tutorial = false;
 
     public GameObject showRocksHints;
     // Start is called before the first frame update

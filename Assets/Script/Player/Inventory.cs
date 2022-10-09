@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventory = new List<GameObject>();
     }
 
     // Update is called once per frame

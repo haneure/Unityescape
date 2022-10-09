@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Guard : MonoBehaviour
 {
+    private Animator anim;
     [SerializeField] Transform[] point;
     int idxPoint = 0;
     public float speed = 3f;
@@ -41,12 +42,22 @@ public class Guard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = this.GetComponentInChildren(typeof(Animator)) as Animator;
         m_Rigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+        if(pause || stunned)
+        {
+            anim.SetBool("Speed", false);
+        }
+        else
+        {
+            anim.SetBool("Speed", true);
+        }
+
         if(!stunned) {
             Vector3 posTarget = new Vector3(point[idxPoint].position.x,this.transform.position.y,point[idxPoint].position.z);
 

@@ -19,16 +19,16 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(GameIsPaused)
-            {
-                Resume();
-            }
-            else{
-                Pause();
-            }
-        }
+        // if(Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     if(GameIsPaused)
+        //     {
+        //         Resume();
+        //     }
+        //     else{
+        //         Pause();
+        //     }
+        // }
     }
 
     public void Resume ()
@@ -53,6 +53,14 @@ public class PauseMenu : MonoBehaviour
     public void Leave()
     {
         SceneManager.LoadScene(leaveGame);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        fps.enabled = true;
+        pauseMenuUI.SetActive(false);
+    }
+
+    public void Retry() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
         GameIsPaused = false;
         fps.enabled = true;

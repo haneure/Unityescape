@@ -17,10 +17,15 @@ public class Player : MonoBehaviour
 
     public GameObject throwRocksHint;
     bool tutorial = true;
+
+    public FirstPersonController fps;
+    [SerializeField] float HealthPoint;
+    [SerializeField] float fallThresholdVelocity;
     Transform player;
     // Start is called before the first frame update
     void Start()
     {
+        fps = this.gameObject.GetComponent<FirstPersonController>();
         player = this.gameObject.transform.GetChild(0);
         if(throwRocksHint != null) {
             tutorial = false;
@@ -30,6 +35,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool previousGrounded = fps.isGrounded;
+
+        if(!previousGrounded & fps.isGrounded) {
+            Debug.Log("Do Damage: " + (fps.rb.velocity.y < -fallThresholdVelocity));
+        }
+
         if (Input.GetMouseButton(1)) {
             if(!haveRock){
                 if(inventory.inventory.Count > 0){

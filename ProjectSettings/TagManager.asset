@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - guard
+  - dt_collider
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - Target
-  - Obstruction
+  - 
+  - 
   - 
   - 
   - 

@@ -9,6 +9,7 @@ public class t_jailbar : MonoBehaviour
     public bool haveKey = false;
     GameObject keyhole;
     public UI_Inventory inventori;
+    public colliderwin showWinUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,13 +37,9 @@ public class t_jailbar : MonoBehaviour
         if(haveKey) {
             keyhole.SetActive(false);
             inventori.deleteFromInventory("rust_key");
-            nextScene();
+            showWinUI.showWinUI();
         } else {
             Debug.Log("Kamu tidak punya kunci");
         }
-    }
-
-    public void nextScene() {
-        SceneManager.LoadScene("2.OutsideJail");
     }
 }

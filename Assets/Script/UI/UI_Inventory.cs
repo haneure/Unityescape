@@ -11,8 +11,8 @@ public class UI_Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GameObject.Find("Player").GetComponent<Inventory>();
-        Debug.Log(inventory);
+        // inventory = GameObject.Find("Player").GetComponent<Inventory>();
+        // Debug.Log(inventory);
         // Panel panel = gameObject.GetComponentInChildren();
     }
 

@@ -10,12 +10,12 @@ public class t_chestkey : MonoBehaviour
 
     public Inventory inventory;
     public bool haveKey = false;
-    GameObject keyhole;
+    public GameObject keyhole;
     public UI_Inventory inventori;
     // Start is called before the first frame update
     void Start()
     {
-        keyhole = this.gameObject;
+        // keyhole = this.gameObject;
         Debug.Log(inventori.inventory);
         
         anim = this.GetComponent<Animator>();

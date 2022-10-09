@@ -107257,6 +107257,7 @@ MonoBehaviour:
   open: 0
   inventory: {fileID: 317198}
   haveKey: 0
+  keyhole: {fileID: 1794155463}
   inventori: {fileID: 586372333}
 --- !u!1 &1650356373
 GameObject:

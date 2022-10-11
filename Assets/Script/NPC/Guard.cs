@@ -64,11 +64,10 @@ public class Guard : MonoBehaviour
             Vector3 posPlayer = new Vector3(fov.playerRef.transform.position.x, this.transform.position.y, fov.playerRef.transform.position.z);
 
             if(!stunned){
-                if(playerDetector.playerTouched) {
-                    gameOverEvent.showGameOverUI();
-                    playerDetector.playerTouched = false;
-                
-                }
+                // if(playerDetector.playerTouched) {
+                //     gameOverEvent.showGameOverUI();
+                //     playerDetector.playerTouched = false;
+                // }
             }
         
             if(comeback == false) {

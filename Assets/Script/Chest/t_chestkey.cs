@@ -13,6 +13,8 @@ public class t_chestkey : MonoBehaviour
     public GameObject keyhole;
     public UI_Inventory inventori;
 
+    public GameObject objective;
+
     public AudioSource chestOpenAudio = null;
     private float openDelay = 0;
     // Start is called before the first frame update
@@ -50,6 +52,7 @@ public class t_chestkey : MonoBehaviour
             anim.SetTrigger("Activate");
             chestOpenAudio.PlayDelayed(openDelay);
             inventori.deleteFromInventory("rust_keychest");
+            objective.SetActive(true);
             open = true;
         } else {
             Debug.Log("Kamu tidak punya kunci");

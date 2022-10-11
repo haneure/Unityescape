@@ -7,17 +7,19 @@ public class t_jailbar : MonoBehaviour
 {
     public Inventory inventory;
     public bool haveKey = false;
-    GameObject keyhole;
+    public GameObject keyhole;
+    GameObject jailbar;
     public UI_Inventory inventori;
     public colliderwin showWinUI;
 
     public AudioSource jailOpenAudio = null;
     private float openDelay = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         // inventory = GameObject.Find("Player").GetComponent<Inventory>();
-        keyhole = this.gameObject;
+        jailbar = this.gameObject;
         Debug.Log(inventori.inventory);
     }
 
@@ -39,6 +41,7 @@ public class t_jailbar : MonoBehaviour
 
         if(haveKey) {
             keyhole.SetActive(false);
+            jailbar.SetActive(false);
             inventori.deleteFromInventory("rust_key");
             jailOpenAudio.PlayDelayed(openDelay);
             // showWinUI.showWinUI();

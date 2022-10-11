@@ -112637,6 +112637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 631669405}
   haveKey: 0
+  keyhole: {fileID: 1226087275}
   inventori: {fileID: 466669962}
   showWinUI: {fileID: 1684050924}
   jailOpenAudio: {fileID: 248038292}
@@ -123930,7 +123931,7 @@ MonoBehaviour:
   bulletVelocity: 5
   fireRate: 1
   bullet: {fileID: 6181723518000176534, guid: d4e5a6bc083a07746a927348289ae070, type: 3}
-  adjustY: 0
+  adjustY: 2
   inventory: {fileID: 1575938805}
   inventori: {fileID: 466669962}
   haveRock: 0
@@ -124008,13 +124009,13 @@ MonoBehaviour:
   invertCamera: 0
   cameraCanMove: 1
   mouseSensitivity: 2
-  maxLookAngle: 50
+  maxLookAngle: 70
   lockCursor: 1
   crosshair: 1
-  crosshairImage: {fileID: 0}
+  crosshairImage: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
   crosshairColor: {r: 1, g: 1, b: 1, a: 1}
   enableZoom: 1
-  holdToZoom: 0
+  holdToZoom: 1
   zoomKey: 324
   zoomFOV: 30
   zoomStepTime: 5

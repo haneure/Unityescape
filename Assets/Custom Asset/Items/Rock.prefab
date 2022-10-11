@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7efe28fe00134dbdbee8bc176db1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rockAudio: {fileID: 9058051578684493225, guid: e1ac32d9dcda684459029c0b389077e1, type: 3}
+  rockThrow: {fileID: 8300000, guid: 50ef5928bcd34cc4f9557db73eae1b1b, type: 3}

@@ -5,7 +5,6 @@ using UnityEngine;
 public class footstep : MonoBehaviour
 {
     public AudioSource footstepSound;
-    bool crouch = false;
 
     // // Start is called before the first frame update
     // void Start()
@@ -16,15 +15,13 @@ public class footstep : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("left ctrl")) {
-            crouch = true;
-        } else {
-            crouch = false;
-        }
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) && !crouch)
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            footstepSound.enabled = true;
+                footstepSound.enabled = true;
         }
-        
+        else
+        {
+            footstepSound.enabled = false;
+        }
     }
 }

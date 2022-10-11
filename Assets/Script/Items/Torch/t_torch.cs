@@ -10,6 +10,10 @@ public class t_torch : MonoBehaviour
     public Sprite interactIcon;
     public Vector2 iconSize;
     int light;
+
+    public AudioSource torchOpenAudio = null;
+    private float openDelay = 0;
+    public bool open;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +24,14 @@ public class t_torch : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void triggerTorch() {
+        if(!open) {
+            open = true;
+            torchOpenAudio.PlayDelayed(openDelay);
+        } else {
+            open = false;
+        }
     }
 }

@@ -7,6 +7,9 @@ public class t_chest : MonoBehaviour
 {
     private Animator anim;
     public bool open;
+
+    public AudioSource chestOpenAudio = null;
+    private float openDelay = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class t_chest : MonoBehaviour
         if(!open) {
             anim.SetTrigger("Activate");
             open = true;
+            chestOpenAudio.PlayDelayed(openDelay);
         } else {
             anim.ResetTrigger("Activate");
             open = false;

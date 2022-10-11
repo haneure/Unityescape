@@ -89,7 +89,6 @@ public class Guard : MonoBehaviour
                 }
             }
             
-        
             if(comeback == false) {
                 if(!stopAfterHit) {
                     if(!pursue) {
@@ -248,6 +247,9 @@ public class Guard : MonoBehaviour
     public void Hit() {
         stopAfterHit = true;
         playerDetector.player.healthPoint -= hitDamage;
+        if(playerDetector.player.healthPoint <= 0) {
+            gameOverEvent.showGameOverUI();
+        }
         anim.SetTrigger("HitPlayer");
         lastAttacked = Time.time;
     }

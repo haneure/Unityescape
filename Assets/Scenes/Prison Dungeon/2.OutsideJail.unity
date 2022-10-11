@@ -17516,6 +17516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   open: 1
+  chestOpenAudio: {fileID: 0}
 --- !u!114 &186715522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47210,6 +47211,7 @@ MonoBehaviour:
   haveKey: 0
   inventori: {fileID: 917207621}
   showWinUI: {fileID: 0}
+  jailOpenAudio: {fileID: 0}
 --- !u!4 &693976484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2, type: 3}
@@ -140818,7 +140820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: hitDamage
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: stopAfterHitTimer

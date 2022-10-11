@@ -69,10 +69,6 @@ public class Player : MonoBehaviour
 
         healthUI.text = "HP: " + Mathf.RoundToInt(healthPoint);
 
-        if(healthPoint <= 0){
-            gameOverEvent.showGameOverUI();
-        }
-
         if (Input.GetMouseButton(1)) {
             if(!haveRock){
                 if(inventory.inventory.Count > 0){

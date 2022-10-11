@@ -25,4 +25,13 @@ public class t_torch : MonoBehaviour
     {
         
     }
+
+    public void triggerTorch() {
+        if(!open) {
+            torchOpenAudio.PlayDelayed(openDelay);
+            open = true;
+        } else {
+            open = false;
+        }
+    }
 }

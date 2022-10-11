@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class t_rock : MonoBehaviour
 {
-    public Guard guard;
+    Guard guard;
     // Start is called before the first frame update
     void Start()
     {

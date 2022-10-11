@@ -34937,6 +34937,7 @@ MonoBehaviour:
     m_Bits: 256
   jumpHeight: 5
   grounded: 0
+  gameOverEvent: {fileID: 0}
 --- !u!114 &610021327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48794,7 +48795,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 45dcdbf10bd28a545b338038c1f996ef, type: 2}
   m_audioClip: {fileID: 8300000, guid: e018b3605100b3d4ca19a60bb99a63db, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.212
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -97153,18 +97154,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1430070620}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   ID: 0
   interactIcon: {fileID: 0}
   iconSize: {x: 0, y: 0}
@@ -110253,6 +110242,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1315105084}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   ID: 0
   interactIcon: {fileID: 0}
   iconSize: {x: 0, y: 0}
@@ -110536,6 +110537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 317198}
   haveKey: 0
+  keyhole: {fileID: 2129265369}
   inventori: {fileID: 586372333}
   jailOpenAudio: {fileID: 124543590}
 --- !u!1001 &1656197384
@@ -123087,30 +123089,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1794155463}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1315105084}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   ID: 0
   interactIcon: {fileID: 0}
   iconSize: {x: 0, y: 0}
@@ -132709,6 +132687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 317198}
   haveKey: 0
+  keyhole: {fileID: 1430070620}
   inventori: {fileID: 586372333}
   showWinUI: {fileID: 2060030364}
   jailOpenAudio: {fileID: 1870254821}
@@ -133869,18 +133848,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: t_jailbar3, Assembly-CSharp
         m_MethodName: openJailbar
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2129265369}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

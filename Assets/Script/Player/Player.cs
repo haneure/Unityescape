@@ -6,7 +6,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float healthPoint;
+    [SerializeField] public float healthPoint;
     public TextMeshProUGUI healthUI;
 
     public float bulletVelocity = 1f;
@@ -34,9 +34,11 @@ public class Player : MonoBehaviour
     Transform player;
     private Animator animator;
     private Rigidbody rigid;
+    public collidergameover gameOverEvent;
     // Start is called before the first frame update
     void Start()
     {
+        gameOverEvent = GetComponent<collidergameover>();
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         player = this.gameObject.transform.GetChild(0);
@@ -67,8 +69,8 @@ public class Player : MonoBehaviour
 
         healthUI.text = "HP: " + Mathf.RoundToInt(healthPoint);
 
-        if(healthPoint == 0){
-            Debug.Log("Health Point 0 - Game Over");
+        if(healthPoint <= 0){
+            gameOverEvent.showGameOverUI();
         }
 
         if (Input.GetMouseButton(1)) {

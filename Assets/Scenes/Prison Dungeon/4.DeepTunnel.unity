@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5516,7 +5516,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 45dcdbf10bd28a545b338038c1f996ef, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9eafa2696957bd6478c8070a5031e89f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.133
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -35257,7 +35257,7 @@ MonoBehaviour:
   maxLookAngle: 50
   lockCursor: 1
   crosshair: 1
-  crosshairImage: {fileID: 0}
+  crosshairImage: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
   crosshairColor: {r: 1, g: 1, b: 1, a: 1}
   enableZoom: 1
   holdToZoom: 0
@@ -35306,13 +35306,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoint: 100
-  healthUI: {fileID: 0}
+  healthUI: {fileID: 102104692}
   bulletVelocity: 5
   fireRate: 1
   bullet: {fileID: 6181723518000176534, guid: d4e5a6bc083a07746a927348289ae070, type: 3}
   adjustY: 0
-  inventory: {fileID: 0}
-  inventori: {fileID: 0}
+  inventory: {fileID: 1290117048}
+  inventori: {fileID: 40350441}
   haveRock: 0
   throwRocksHint: {fileID: 0}
   fallThresholdVelocity: 3
@@ -35323,6 +35323,7 @@ MonoBehaviour:
     m_Bits: 256
   jumpHeight: 5
   grounded: 0
+  gameOverEvent: {fileID: 0}
 --- !u!114 &1348915867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38701,6 +38702,7 @@ MonoBehaviour:
     m_Bits: 0
   jumpHeight: 5
   grounded: 0
+  gameOverEvent: {fileID: 0}
 --- !u!136 &1472982012
 CapsuleCollider:
   m_ObjectHideFlags: 0

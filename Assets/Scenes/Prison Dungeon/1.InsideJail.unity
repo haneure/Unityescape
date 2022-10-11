@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18296129, g: 0.22865136, b: 0.30683458, a: 1}
+  m_IndirectSpecularColor: {r: 0.18296163, g: 0.22865225, b: 0.30683574, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -50567,9 +50567,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 889056047}
+        m_TargetAssemblyTypeName: t_torch, Assembly-CSharp
+        m_MethodName: triggerTorch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   ID: 0
   interactIcon: {fileID: 0}
   iconSize: {x: 0, y: 0}
+--- !u!114 &889056047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889056040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adecff6ca589ff04ea25a698d59bf901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchOpenAudio: {fileID: 1369737188}
+  open: 0
 --- !u!1001 &900128764
 PrefabInstance:
   m_ObjectHideFlags: 0

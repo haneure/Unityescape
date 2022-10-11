@@ -10,6 +10,9 @@ public class t_jailbar : MonoBehaviour
     GameObject keyhole;
     public UI_Inventory inventori;
     public colliderwin showWinUI;
+
+    public AudioSource jailOpenAudio = null;
+    private float openDelay = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,9 @@ public class t_jailbar : MonoBehaviour
         if(haveKey) {
             keyhole.SetActive(false);
             inventori.deleteFromInventory("rust_key");
-            showWinUI.showWinUI();
+            jailOpenAudio.PlayDelayed(openDelay);
+            // showWinUI.showWinUI();
+            SceneManager.LoadScene(showWinUI.nextGame);
         } else {
             Debug.Log("Kamu tidak punya kunci");
         }

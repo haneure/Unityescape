@@ -110242,18 +110242,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1315105084}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   ID: 0
   interactIcon: {fileID: 0}
   iconSize: {x: 0, y: 0}
@@ -110274,6 +110262,7 @@ MonoBehaviour:
   haveKey: 0
   keyhole: {fileID: 1794155463}
   inventori: {fileID: 586372333}
+  objective: {fileID: 1315105084}
   chestOpenAudio: {fileID: 1659722073}
 --- !u!1 &1650356373
 GameObject:

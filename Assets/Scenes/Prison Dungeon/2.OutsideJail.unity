@@ -33614,7 +33614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaveGame: Menu
-  fps: {fileID: 0}
+  fps: {fileID: 1962479928}
   pauseMenuUI: {fileID: 2022749842}
 --- !u!114 &528379677
 MonoBehaviour:
@@ -90740,7 +90740,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1387624079}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: colliderwin, Assembly-CSharp
         m_MethodName: Leave
         m_Mode: 1
@@ -91922,7 +91922,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1387624079}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: colliderwin, Assembly-CSharp
         m_MethodName: next
         m_Mode: 1
@@ -92397,7 +92397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386635152}
+      - m_Target: {fileID: 543450653540879728}
         m_TargetAssemblyTypeName: collidergameover, Assembly-CSharp
         m_MethodName: retry
         m_Mode: 1
@@ -92584,7 +92584,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386635152}
+      - m_Target: {fileID: 543450653540879728}
         m_TargetAssemblyTypeName: collidergameover, Assembly-CSharp
         m_MethodName: Leave
         m_Mode: 1
@@ -94455,7 +94455,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1371549017}
+      - m_Target: {fileID: 593550890}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -95125,7 +95125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1387624078}
   - component: {fileID: 1387624080}
-  - component: {fileID: 1387624079}
+  - component: {fileID: 1387624081}
   m_Layer: 0
   m_Name: showwin
   m_TagString: Untagged
@@ -95141,30 +95141,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387624077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.33, y: 10.243, z: -4.19}
+  m_LocalPosition: {x: -0.54, y: 10.243, z: -4.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 123215624}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1387624079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387624077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e249411085c64df4e8b21d4af180b26a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leaveGame: Menu
-  nextGame: 3.DownstairJail
-  winToshow: {fileID: 431326085}
-  h_showWin: 0
-  fps: {fileID: 0}
 --- !u!65 &1387624080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95178,6 +95161,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.61, y: 1.38, z: 4.72}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1387624081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387624077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a614c1f4edf793f4ba85edaaf15baf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: 3.DownstairJail
 --- !u!1001 &1390327338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127132,7 +127128,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2022749842}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -140518,6 +140514,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1745960115316492056, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
   m_PrefabInstance: {fileID: 2283426183396887159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &543450653540879728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2283426183973015277, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
+  m_PrefabInstance: {fileID: 2283426183396887159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23021d4507bf20a4699ec9f432e0dd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &543450653540879730 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
@@ -140682,6 +140689,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1400960151988526498, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
+      propertyPath: m_TagString
+      value: guard
+      objectReference: {fileID: 0}
     - target: {fileID: 1745960115316492056, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -140737,6 +140748,10 @@ PrefabInstance:
     - target: {fileID: 2283426183973015265, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: obstructionMask.m_Bits
       value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
+      propertyPath: stunTime
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: pauseWaypoint1Timer

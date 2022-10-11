@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         grounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer, QueryTriggerInteraction.Ignore);
         
         if(!previousGrounded && grounded) {
-            Debug.Log("Do damage: " + (rigid.velocity.y < -fallThresholdVelocity));
+            // Debug.Log("Do damage: " + (rigid.velocity.y < -fallThresholdVelocity));
 
             if(rigid.velocity.y < -fallThresholdVelocity){
                 float damage = Mathf.Abs(rigid.velocity.y + fallThresholdVelocity) + 7;

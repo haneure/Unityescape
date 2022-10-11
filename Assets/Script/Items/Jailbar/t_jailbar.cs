@@ -37,7 +37,8 @@ public class t_jailbar : MonoBehaviour
         if(haveKey) {
             keyhole.SetActive(false);
             inventori.deleteFromInventory("rust_key");
-            showWinUI.showWinUI();
+            // showWinUI.showWinUI();
+            SceneManager.LoadScene(showWinUI.nextGame);
         } else {
             Debug.Log("Kamu tidak punya kunci");
         }

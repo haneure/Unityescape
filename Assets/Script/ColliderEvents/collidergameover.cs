@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class collidergameover : MonoBehaviour
 {
     public string leaveGame = "Menu";
-    public string retryGame = "Old Sea Port";
+    public string retryGame;
     public GameObject gameOverToshow;
     
     public bool h_showGameO = false;
@@ -20,20 +20,13 @@ public class collidergameover : MonoBehaviour
     void Start()
     {
         pauseMenu = GameObject.Find("UI").GetComponentInChildren<PauseMenu>();
+        retryGame = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.name == "Player" && showGameoEvent)
-        {
-            showGameOverUI();
-        }
     }
 
     public void showGameOverUI() {
@@ -53,8 +46,6 @@ public class collidergameover : MonoBehaviour
         fps.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        pauseMenu.Pause();
-        pauseMenu.Resume();
         SceneManager.LoadScene(retryGame);
     }
 

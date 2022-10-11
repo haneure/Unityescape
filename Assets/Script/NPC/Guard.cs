@@ -37,6 +37,17 @@ public class Guard : MonoBehaviour
     public bool stunned;
     public int stunTime;
 
+    //Hit
+    public int hitDamage;
+    public float hitDelay;
+    float lastAttacked = -9999;
+    private int initialStopAfterHitTimer;
+    public int stopAfterHitTimer;
+    private bool hitOnce = false;
+    private int hitCount = 0;
+    public bool stopAfterHit = false;
+    bool canHit = true;
+
     public collidergameover gameOverEvent;
 
     // Start is called before the first frame update
@@ -44,42 +55,58 @@ public class Guard : MonoBehaviour
     {
         anim = this.GetComponentInChildren(typeof(Animator)) as Animator;
         m_Rigidbody = this.gameObject.GetComponent<Rigidbody>();
+        initialStopAfterHitTimer = stopAfterHitTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if(pause || stunned)
-        // {
-        //     anim.SetBool("Speed", false);
-        // }
-        // else
-        // {
-        //     anim.SetBool("Speed", true);
-        // }
+        if(pause || stunned || stopAfterHit)
+        {
+            anim.SetBool("Speed", false);
+        }
+        else
+        {
+            anim.SetBool("Speed", true);
+        }
 
         if(!stunned) {
             Vector3 posTarget = new Vector3(point[idxPoint].position.x,this.transform.position.y,point[idxPoint].position.z);
 
             Vector3 posPlayer = new Vector3(fov.playerRef.transform.position.x, this.transform.position.y, fov.playerRef.transform.position.z);
 
-            if(!stunned){
-                // if(playerDetector.playerTouched) {
-                //     gameOverEvent.showGameOverUI();
-                //     playerDetector.playerTouched = false;
-                // }
+            if(stopAfterHit) {
+                stopAfterHitTimer--;
+                if(stopAfterHitTimer <= 0){
+                    stopAfterHit = false;
+                    stopAfterHitTimer = initialStopAfterHitTimer;
+                }
             }
-        
+
+            if(playerDetector.playerTouched) {
+                if(Time.time > lastAttacked + hitDelay) {
+                    Hit();
+                }
+            }
+            
             if(comeback == false) {
-                if(!pursue) {
-                    this.transform.position = Vector3.MoveTowards(this.transform.position, posTarget, speed * Time.deltaTime);
-                } else {
-                    this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, pursueSpeed * Time.deltaTime);
+                if(!stopAfterHit) {
+                    if(!pursue) {
+                        this.transform.position = Vector3.MoveTowards(this.transform.position, posTarget, speed * Time.deltaTime);
+                    } else {
+                        this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, pursueSpeed * Time.deltaTime);
+                    }
                 }
 
+
                 if(!reachPoint){
-                    Vector3 posPoint = posTarget - this.transform.position;
-                    this.transform.rotation = Quaternion.LookRotation(posPoint);
+                    if(!pursue) {
+                        Vector3 posPoint = posTarget - this.transform.position;
+                        this.transform.rotation = Quaternion.LookRotation(posPoint);
+                    } else {
+                        Vector3 posPoint = posPlayer - this.transform.position;
+                        this.transform.rotation = Quaternion.LookRotation(posPoint);
+                    }
                 } else {
                     if(idxPoint == 0){
                         // Quaternion target = Quaternion.Euler(point[idxPoint].rotation);
@@ -171,11 +198,23 @@ public class Guard : MonoBehaviour
                 }
 
             } else {
-                this.transform.position = Vector3.MoveTowards(this.transform.position, posTarget, speed * Time.deltaTime);
+                // this.transform.position = Vector3.MoveTowards(this.transform.position, posTarget, speed * Time.deltaTime);
 
-                Vector3 posPoint = posTarget - this.transform.position;
-                this.transform.rotation = Quaternion.LookRotation(posPoint);
-                
+                if(!stopAfterHit) {
+                    if(!pursue) {
+                        this.transform.position = Vector3.MoveTowards(this.transform.position, posTarget, speed * Time.deltaTime);
+                    } else {
+                        this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, pursueSpeed * Time.deltaTime);
+                    }
+                }
+
+                if(!pursue) {
+                    Vector3 posPoint = posTarget - this.transform.position;
+                    this.transform.rotation = Quaternion.LookRotation(posPoint);
+                } else {
+                    Vector3 posPoint = posPlayer - this.transform.position;
+                    this.transform.rotation = Quaternion.LookRotation(posPoint);
+                }
 
                 posMusuh = new Vector3(this.transform.position.x, point[idxPoint].position.y, this.transform.position.z);
                 if (Vector3.Distance(posMusuh, point[idxPoint].position) < 0.1f) {
@@ -188,10 +227,12 @@ public class Guard : MonoBehaviour
                 }
             }
         } else {
+            anim.SetBool("IsDizzy", true);
             stunTime--;
             Quaternion target = Quaternion.Euler(0, 360, 0);
             this.transform.rotation =  Quaternion.RotateTowards(this.transform.rotation, target, 2f * Time.deltaTime);
             if(stunTime == 0) {
+                anim.SetBool("IsDizzy", false);
                 stunned = false;
             }
         }
@@ -202,6 +243,23 @@ public class Guard : MonoBehaviour
         Debug.Log("kya aku didorong");
         m_Rigidbody.AddForce(transform.forward * m_Thrust);
     }
+
+    public void Hit() {
+        stopAfterHit = true;
+        playerDetector.player.healthPoint -= hitDamage;
+        if(playerDetector.player.healthPoint <= 0) {
+            gameOverEvent.showGameOverUI();
+        }
+        anim.SetTrigger("HitPlayer");
+        lastAttacked = Time.time;
+    }
+
+    // IEnumerator Hit(float delay){
+    //     Debug.Log(delay);
+    //     anim.SetBool("HitPlayer", true);
+    //     playerDetector.player.healthPoint -= 10;
+    //     yield return new WaitForSeconds(delay);
+    // }
 
     // private void OnCollisionEnter(Collision other) {
     //     Debug.Log(other.gameObject.name);

@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float jumpHeight = 5f;
 
-    private bool grounded;
+    public bool grounded;
 
     Transform player;
     private Animator animator;
@@ -61,9 +61,9 @@ public class Player : MonoBehaviour
                 }
                 Debug.Log("Damage dealt: " + damage);
             }
-        }
 
-        animator.SetBool ("Jump", grounded);
+            animator.SetBool("Jump", false);
+        }
 
         healthUI.text = "HP: " + Mathf.RoundToInt(healthPoint);
 

@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {   
-    public string playGame1 = "1.InsideJail";
-    public string playGame2 = "2.OutsideJail";
-    public string playGame3 = "3.DownstairJail";
+    public string playGame1_1 = "1.InsideJail";
+    public string playGame1_2 = "2.OutsideJail";
+    public string playGame1_3 = "3.DownstairJail";
+    public string playGame1_4 = "4.DeepTunnel";
 
     // public SceneFader fader;
     
@@ -32,22 +33,28 @@ public class MainMenu : MonoBehaviour
     //     }
     // }
 
-    public void Play1()
+    public void Play1_1()
     {
         // Debug.Log("Play");
-        SceneManager.LoadScene(playGame1);
+        SceneManager.LoadScene(playGame1_1);
     }
 
-    public void Play2()
+    public void Play1_2()
     {
         // Debug.Log("Play");
-        SceneManager.LoadScene(playGame2);
+        SceneManager.LoadScene(playGame1_2);
     }
 
-    public void Play3()
+    public void Play1_3()
     {
         // Debug.Log("Play");
-        SceneManager.LoadScene(playGame3);
+        SceneManager.LoadScene(playGame1_3);
+    }
+
+    public void Play1_4()
+    {
+        // Debug.Log("Play");
+        SceneManager.LoadScene(playGame1_4);
     }
 
     public void Quit()

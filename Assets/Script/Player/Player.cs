@@ -69,6 +69,7 @@ public class Player : MonoBehaviour
 
         healthUI.text = "HP: " + Mathf.RoundToInt(healthPoint);
 
+        //Throw rock
         if (Input.GetMouseButton(1)) {
             if(!haveRock){
                 if(inventory.inventory.Count > 0){
@@ -101,7 +102,12 @@ public class Player : MonoBehaviour
                     Debug.Log("Rock is not in your inventory");
                 }
             }
-        } 
+        }
+        
+        //Jump
+        //if (Input.GetButton("Jump")) {
+        //    Jump();
+        //}
     }
 
     private void Jump() {

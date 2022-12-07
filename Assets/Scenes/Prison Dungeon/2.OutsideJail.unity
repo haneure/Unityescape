@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18296129, g: 0.22865136, b: 0.30683458, a: 1}
+  m_IndirectSpecularColor: {r: 0.18296163, g: 0.22865225, b: 0.30683574, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -95327,7 +95327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a614c1f4edf793f4ba85edaaf15baf69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: 3.DownstairJail
+  nextSceneName: 3.DownstairJail
 --- !u!1001 &1390327338
 PrefabInstance:
   m_ObjectHideFlags: 0

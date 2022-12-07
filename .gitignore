@@ -79,3 +79,27 @@ crashlytics-build.properties
 
 
 UserSettings/EditorUserSettings.asset
+
+ProjectSettings/EditorBuildSettings.asset
+
+ProjectSettings/HDRPProjectSettings.asset
+
+ProjectSettings/InputManager.asset
+
+ProjectSettings/ShaderGraphSettings.asset
+
+ProjectSettings/TagManager.asset
+
+ProjectSettings/TimelineSettings.asset
+
+ProjectSettings/VFXManager.asset
+
+UserSettings/HDRPUserSettings.asset
+
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+
+UserSettings/Layouts/default-2021.dwlt
+
+UserSettings/Search.index
+
+UserSettings/Search.settings

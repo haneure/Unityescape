@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4901,7 +4901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.131012, y: 1.131012}
+  m_AnchoredPosition: {x: 1.1309814, y: 1.131012}
   m_SizeDelta: {x: 33.9293, y: 33.9293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273337827
@@ -8649,7 +8649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6011047, y: 0.17401123}
+  m_AnchoredPosition: {x: 1.6010742, y: 0.17401123}
   m_SizeDelta: {x: -4.200012, y: 0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &463673107
@@ -10610,7 +10610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.131012, y: 1.131012}
+  m_AnchoredPosition: {x: 1.1309814, y: 1.131012}
   m_SizeDelta: {x: 33.9293, y: 33.9293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556222108
@@ -23602,7 +23602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6011047, y: 0.17401123}
+  m_AnchoredPosition: {x: 1.6010742, y: 0.17401123}
   m_SizeDelta: {x: -4.200012, y: 0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1204472940
@@ -26477,6 +26477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96059c862c9a4fa5ba34350d65fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthPoint: 0
+  healthUI: {fileID: 0}
   bulletVelocity: 5
   fireRate: 1
   bullet: {fileID: 6181723518000176534, guid: d4e5a6bc083a07746a927348289ae070, type: 3}
@@ -26485,6 +26487,15 @@ MonoBehaviour:
   inventori: {fileID: 40350441}
   haveRock: 0
   throwRocksHint: {fileID: 0}
+  fallThresholdVelocity: 0
+  groundCheck: {fileID: 0}
+  groundDistance: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpHeight: 5
+  grounded: 0
+  gameOverEvent: {fileID: 0}
 --- !u!114 &1325921124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26494,53 +26505,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1325921122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 405530334}
-  fov: 60
-  invertCamera: 0
-  cameraCanMove: 1
-  mouseSensitivity: 2
-  maxLookAngle: 50
-  lockCursor: 1
-  crosshair: 1
-  crosshairImage: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
-  crosshairColor: {r: 1, g: 1, b: 1, a: 1}
-  enableZoom: 1
-  holdToZoom: 1
-  zoomKey: 324
-  zoomFOV: 30
-  zoomStepTime: 5
-  playerCanMove: 1
-  walkSpeed: 5
-  maxVelocityChange: 10
-  enableSprint: 1
-  unlimitedSprint: 1
-  sprintKey: 304
-  sprintSpeed: 7
-  sprintDuration: 5
-  sprintCooldown: 0.5
-  sprintFOV: 80
-  sprintFOVStepTime: 10
-  useSprintBar: 1
-  hideBarWhenFull: 1
-  sprintBarBG: {fileID: 2127185459}
-  sprintBar: {fileID: 1716360844}
-  sprintBarWidthPercent: 0.3
-  sprintBarHeightPercent: 0.02
-  enableJump: 1
-  jumpKey: 32
-  jumpPower: 5
-  enableCrouch: 1
-  holdToCrouch: 1
-  crouchKey: 306
-  crouchHeight: 0.75
-  speedReduction: 0.5
-  enableHeadBob: 1
-  joint: {fileID: 492153099}
-  bobSpeed: 10
-  bobAmount: {x: 0, y: 0.1, z: 0}
 --- !u!114 &1325921125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27501,7 +27468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6011047, y: 0.17401123}
+  m_AnchoredPosition: {x: 1.6010742, y: 0.17401123}
   m_SizeDelta: {x: -4.200012, y: 0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1378270577
@@ -38561,7 +38528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.131012, y: 1.131012}
+  m_AnchoredPosition: {x: 1.1309814, y: 1.131012}
   m_SizeDelta: {x: 33.9293, y: 33.9293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991599787

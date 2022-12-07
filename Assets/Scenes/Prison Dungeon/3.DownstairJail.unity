@@ -10792,7 +10792,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 338330440}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -48459,7 +48459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -136.29004, y: -58.000015}
+  m_AnchoredPosition: {x: -136.29004, y: -58}
   m_SizeDelta: {x: -333.89673, y: -446.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &779018030

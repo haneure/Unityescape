@@ -130299,6 +130299,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3995641167535062227, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 215.53998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3995641167835100239, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1154016778}
     - target: {fileID: 4001581255889164454, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: healthUI
       value: 

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class t_colliderNextScene : MonoBehaviour
 {
-    [SerializeField] string nextScene;
+    [SerializeField] string nextSceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +19,16 @@ public class t_colliderNextScene : MonoBehaviour
         
     }
 
+    public void nextScene()
+    {
+        SceneManager.LoadScene(nextSceneName);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene(nextSceneName);
         }
     }
 }

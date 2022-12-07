@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SpatialTracking;
 
 #if UNITY_EDITOR
     using UnityEditor;
@@ -22,6 +23,7 @@ public class FirstPersonController : MonoBehaviour
     #region Camera Movement Variables
 
     public Camera playerCamera;
+    TrackedPoseDriver hmdTrackedPoseDriver;
 
     private Animator anim;
 
@@ -220,26 +222,28 @@ public class FirstPersonController : MonoBehaviour
         #region Camera
 
         // Control camera movement
-        if(cameraCanMove)
-        {
-            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+        // if(cameraCanMove)
+        // {
+        //     yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
-            if (!invertCamera)
-            {
-                pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
-            }
-            else
-            {
-                // Inverted Y
-                pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
-            }
+        //     if (!invertCamera)
+        //     {
+        //         pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
+        //     }
+        //     else
+        //     {
+        //         // Inverted Y
+        //         pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
+        //     }
 
-            // Clamp pitch between lookAngle
-            pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+        //     // Clamp pitch between lookAngle
+        //     pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
 
-            transform.localEulerAngles = new Vector3(0, yaw, 0);
-            playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
-        }
+        //     transform.localEulerAngles = new Vector3(0, yaw, 0);
+        //     playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+        // }
+        hmdTrackedPoseDriver = this.GetComponent<TrackedPoseDriver>();
+        transform.localEulerAngles = new Vector3(0, hmdTrackedPoseDriver.transform.eulerAngles.y, 0);
 
         #region Camera Zoom
 

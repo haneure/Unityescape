@@ -23,4 +23,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prison Dungeon/4.DeepTunnel.unity
     guid: 45d3a0732d400794bbff349f7bffdf7b
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 63ab1bd423bdc434aa46d3d3f75ddcf1, type: 2}

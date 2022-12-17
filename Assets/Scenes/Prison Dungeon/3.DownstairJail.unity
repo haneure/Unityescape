@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18296304, g: 0.22865374, b: 0.30683592, a: 1}
+  m_IndirectSpecularColor: {r: 0.18296358, g: 0.22865449, b: 0.30683723, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -30664,7 +30664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &360416254
 Transform:
   m_ObjectHideFlags: 0
@@ -34064,7 +34064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -187, y: 25.613}
+  m_AnchoredPosition: {x: -187, y: 25.612999}
   m_SizeDelta: {x: -343.4521, y: -184.9489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570250635
@@ -87473,7 +87473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1098555318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110804,6 +110804,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10bc6d9fae2413142a4f49825af0487a, type: 3}
+--- !u!1001 &1654150686
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7258505348012148106, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: fps
+      value: 
+      objectReference: {fileID: 610021324}
+    - target: {fileID: 7258505349291780604, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_Name
+      value: UI (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.660919
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.259439
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40.97542
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505349291780607, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
 --- !u!1 &1655126286
 GameObject:
   m_ObjectHideFlags: 0
@@ -111168,7 +111229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 215.54001}
+  m_AnchoredPosition: {x: 0, y: 215.54004}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1662633072

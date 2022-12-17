@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - guard
+  - dt_collider
   layers:
   - Default
   - TransparentFX
@@ -14,10 +15,10 @@ TagManager:
   - Water
   - UI
   - Interactable
+  - 
+  - Grounded
   - Target
   - Obstruction
-  - 
-  - 
   - 
   - 
   - 
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 1209580687
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 2895678543
     locked: 0

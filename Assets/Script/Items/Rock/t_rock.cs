@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class t_rock : MonoBehaviour
 {
-    public Guard guard;
+    Guard guard;
+
+    public AudioSource rockAudio;
+    private float openDelay = 0;
+
+    public AudioClip rockThrow;
+    private float volume = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +24,10 @@ public class t_rock : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
+        
         if(other.gameObject.tag == "guard" || other.transform.root.CompareTag("guard")) {
+            rockAudio = this.gameObject.AddComponent<AudioSource>();
+            rockAudio.PlayOneShot(rockThrow, volume);
             Debug.Log(other.gameObject.tag);
             if(other.gameObject.tag == "guard"){
                 guard = GameObject.Find(other.gameObject.name).GetComponent<Guard>();
@@ -27,7 +36,7 @@ public class t_rock : MonoBehaviour
                 guard = GameObject.Find(other.transform.parent.name).GetComponent<Guard>();
 
             }
-            
+
             guard.stunTime = 150;
             guard.stunned = true;
         }

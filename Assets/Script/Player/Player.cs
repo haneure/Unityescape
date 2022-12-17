@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] public float healthPoint;
+    public TextMeshProUGUI healthUI;
+
     public float bulletVelocity = 1f;
     public float fireRate = 1;
     private float nextFire = 0.0F;
@@ -17,10 +22,25 @@ public class Player : MonoBehaviour
 
     public GameObject throwRocksHint;
     bool tutorial = true;
+   
+    [SerializeField] float fallThresholdVelocity;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundDistance = 0.2f;
+    [SerializeField] LayerMask groundLayer;
+    [SerializeField] float jumpHeight = 5f;
+
+    public bool grounded;
+
     Transform player;
+    private Animator animator;
+    private Rigidbody rigid;
+    public collidergameover gameOverEvent;
     // Start is called before the first frame update
     void Start()
     {
+        gameOverEvent = GetComponent<collidergameover>();
+        animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody>();
         player = this.gameObject.transform.GetChild(0);
         if(throwRocksHint != null) {
             tutorial = false;
@@ -29,7 +49,27 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        bool previousGrounded = grounded;
+        grounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer, QueryTriggerInteraction.Ignore);
+        
+        if(!previousGrounded && grounded) {
+            // Debug.Log("Do damage: " + (rigid.velocity.y < -fallThresholdVelocity));
+
+            if(rigid.velocity.y < -fallThresholdVelocity){
+                float damage = Mathf.Abs(rigid.velocity.y + fallThresholdVelocity) + 7;
+                if(damage > 3) {
+                    healthPoint -= damage + 7;
+                }
+                Debug.Log("Damage dealt: " + damage);
+            }
+
+            animator.SetBool("Jump", false);
+        }
+
+        healthUI.text = "HP: " + Mathf.RoundToInt(healthPoint);
+
+        //Throw rock
         if (Input.GetMouseButton(1)) {
             if(!haveRock){
                 if(inventory.inventory.Count > 0){
@@ -62,10 +102,15 @@ public class Player : MonoBehaviour
                     Debug.Log("Rock is not in your inventory");
                 }
             }
-        } 
+        }
         
+        //Jump
+        //if (Input.GetButton("Jump")) {
+        //    Jump();
+        //}
+    }
 
-        // player.transform.position = 
-        // this.transform.position = new Vector3(this.transform.position.x + player.transform.position.x, this.transform.position.y + player.transform.position.y, this.transform.position.z + player.transform.position.z);
+    private void Jump() {
+        if(grounded) rigid.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
     }
 }

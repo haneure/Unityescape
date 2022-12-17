@@ -75,4 +75,12 @@ public class colliderwin : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    public void gameClear() {
+        winToshow.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        fps.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 }

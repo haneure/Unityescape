@@ -59,4 +59,12 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
     }
 
+    public void Retry() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        fps.enabled = true;
+        pauseMenuUI.SetActive(false);
+    }
+
 }

@@ -1,28 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {   
-    public string playGame = "1.InsideJail";
-    // // Start is called before the first frame update
-    // void Start()
+    public string playGame1_1 = "1.InsideJail";
+    public string playGame1_2 = "2.OutsideJail";
+    public string playGame1_3 = "3.DownstairJail";
+    public string playGame1_4 = "4.DeepTunnel";
+    public string playGame1_5 = "3.DownstairJail_percobaan";
+
+    // public SceneFader fader;
+    
+    // public void Select (string levelName)
     // {
-        
+    //     fader.FadeTo(levelName);
     // }
 
-    // // Update is called once per frame
-    // void Update()
+    // int levelReached = PlayerPrefs.GetInt("levelReached", 1);
+
+    // public Button[] levelButtons;
+
+    // void Start ()
     // {
-        
+    //     for (int i = 0; i < levelButtons.length; i++)
+    //     {
+    //         if(i + 1 < levelReached)
+    //         {
+    //             levelButtons[i].interactable = false;
+    //         }
+    //     }
     // }
 
-    public void Play()
+    public void Play1_1()
     {
         // Debug.Log("Play");
-        SceneManager.LoadScene(playGame);
+        SceneManager.LoadScene(playGame1_1);
     }
+
+    public void Play1_2()
+    {
+        // Debug.Log("Play");
+        SceneManager.LoadScene(playGame1_2);
+    }
+
+    public void Play1_3()
+    {
+        // Debug.Log("Play");
+        SceneManager.LoadScene(playGame1_3);
+    }
+
+    public void Play1_4()
+    {
+        // Debug.Log("Play");
+        SceneManager.LoadScene(playGame1_4);
+    }
+
+    public void Play1_5()
+    {
+        // Debug.Log("Play");
+        SceneManager.LoadScene(playGame1_5);
+    }
+
 
     public void Quit()
     {

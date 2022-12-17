@@ -242,8 +242,6 @@ public class FirstPersonController : MonoBehaviour
         //     transform.localEulerAngles = new Vector3(0, yaw, 0);
         //     playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
         // }
-        hmdTrackedPoseDriver = this.GetComponent<TrackedPoseDriver>();
-        transform.localEulerAngles = new Vector3(0, hmdTrackedPoseDriver.transform.eulerAngles.y, 0);
 
         #region Camera Zoom
 
@@ -397,6 +395,7 @@ public class FirstPersonController : MonoBehaviour
         {
             // Calculate how fast we should be moving
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            targetVelocity = playerCamera.transform.TransformDirection(-targetVelocity);
 
             float v = Input.GetAxis("Vertical");
 

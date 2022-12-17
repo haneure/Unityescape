@@ -46,9 +46,19 @@ public class Interactor : MonoBehaviour
                     interactImage.sprite = defaultInteractIcon;
                     interactImage.rectTransform.sizeDelta = defaultInteractIconSize;
                 }
-                if (Input.GetKeyDown(KeyCode.E))
+                if(Application.isMobilePlatform)
                 {
-                    interactable.onInteract.Invoke();
+                    if (Input.GetButtonDown("Fire2"))
+                    {
+                        interactable.onInteract.Invoke();
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        interactable.onInteract.Invoke();
+                    }
                 }
             }
         }

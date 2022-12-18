@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 9139809630254947059}
   - component: {fileID: 9139809630254947070}
   m_Layer: 5
-  m_Name: Name
+  m_Name: CharacterName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unity-chan
+  m_text: character
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa25f6678881d6441b7cd9007a3478f0, type: 2}
   m_sharedMaterial: {fileID: -7288576117261474235, guid: aa25f6678881d6441b7cd9007a3478f0, type: 2}
@@ -567,23 +567,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueComponents:
-  - textComponent: {fileID: 9139809630225357702}
+  - charName: 
+    textComponent: {fileID: 9139809630225357702}
     character: {fileID: 0}
     lines: Hmmm . . . this village is so creepy, i don't see a single person here
     characterImg: {fileID: 2800000, guid: e25f40b9778d3e94d848afc6be53f2e7, type: 3}
-  - textComponent: {fileID: 9139809630225357702}
+  - charName: 
+    textComponent: {fileID: 9139809630225357702}
     character: {fileID: 0}
     lines: Let's be carefull
     characterImg: {fileID: 2800000, guid: 7a79996f1f56e704bbc524c190e92b67, type: 3}
-  - textComponent: {fileID: 9139809630225357702}
+  - charName: 
+    textComponent: {fileID: 9139809630225357702}
     character: {fileID: 0}
     lines: But where should i look?
     characterImg: {fileID: 2800000, guid: e25f40b9778d3e94d848afc6be53f2e7, type: 3}
-  - textComponent: {fileID: 9139809630225357702}
+  - charName: 
+    textComponent: {fileID: 9139809630225357702}
     character: {fileID: 0}
     lines: Oh maybe i can find some "Board" that contain information
     characterImg: {fileID: 2800000, guid: e25f40b9778d3e94d848afc6be53f2e7, type: 3}
-  - textComponent: {fileID: 9139809630225357702}
+  - charName: 
+    textComponent: {fileID: 9139809630225357702}
     character: {fileID: 0}
     lines: Okay then, let's go!
     characterImg: {fileID: 2800000, guid: 030bf75db77e91744a2349ba1b63f59a, type: 3}

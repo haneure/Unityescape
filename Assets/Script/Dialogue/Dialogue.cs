@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 [System.Serializable]
 public class DialogueComponent {
+    public string charName;
     public TextMeshProUGUI textComponent;
     public RawImage character;
     public string lines;
@@ -31,15 +32,17 @@ public class Dialogue : MonoBehaviour
         index = 0;
         UI_Inventory = GameObject.Find("UI_Inventory");
 
-        //if (dialogueComponents[index].textComponent == null)
-        //{
-        //    dialogueComponents[index].textComponent = GameObject.Find("Text").GetComponent<TextMeshProUGUI>();
-        //}
+        if (dialogueComponents[index].textComponent == null)
+        {
+            dialogueComponents[index].textComponent = GameObject.Find("Text").GetComponent<TextMeshProUGUI>();
+        }
 
-        //if (dialogueComponents[index].character == null)
-        //{
-        //    dialogueComponents[index].character = GameObject.Find("CharacterImage").GetComponent<RawImage>();
-        //}
+        if (dialogueComponents[index].character == null)
+        {
+            dialogueComponents[index].character = GameObject.Find("CharacterImage").GetComponent<RawImage>();
+        }
+
+        Debug.Log(dialogueComponents[index].textComponent.text);
         dialogueComponents[index].textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -100,6 +103,13 @@ public class Dialogue : MonoBehaviour
             if (count == 0)
             {
                 GameObject.Find("CharacterImage").GetComponent<RawImage>().texture = dialogueComponents[index].characterImg;
+                if (dialogueComponents[index].charName == string.Empty)
+                {
+                    GameObject.Find("CharacterName").GetComponent<TextMeshProUGUI>().text = "Unity-chan";
+                } else
+                {
+                    GameObject.Find("CharacterName").GetComponent<TextMeshProUGUI>().text = dialogueComponents[index].charName;
+                }
                 count++;
             }
             dialogueComponents[index].textComponent.text += c;

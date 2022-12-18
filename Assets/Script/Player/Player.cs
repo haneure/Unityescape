@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     private Animator animator;
     private Rigidbody rigid;
     public collidergameover gameOverEvent;
+
+    public bool dialogueStatus = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -126,24 +128,13 @@ public class Player : MonoBehaviour
                     }
                 }
 
-                if (Input.GetKeyUp(KeyCode.Mouse0) && Time.time > nextFire) {
-                    if(haveRock) {
-                        if(tutorial == false){
-                            throwRocksHint.gameObject.SetActive(false);
-                            tutorial = true;
-                        }
-                        
-                        nextFire = Time.time + fireRate;
-                        GameObject projectile = Instantiate(bullet)as GameObject;
-                        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + adjustY, transform.position.z);
 
-                        projectile.transform.position = spawnPosition + Camera.main.transform.forward * 2;
-                        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-                        rb.velocity= Camera.main.transform.forward * 40;
-                        inventori.deleteFromInventory("Rock");
-                        haveRock = false;
-                    } else {
-                        Debug.Log("Rock is not in your inventory");
+
+            if (Input.GetKeyUp(KeyCode.Mouse0) && Time.time > nextFire) {
+                if (haveRock && dialogueStatus == false) {
+                    if(tutorial == false){
+                        throwRocksHint.gameObject.SetActive(false);
+                        tutorial = true;
                     }
                 }
             }
@@ -154,6 +145,11 @@ public class Player : MonoBehaviour
             //}
         }
         
+    }
+
+    public void SetDialogueStatus(bool status)
+    {
+        dialogueStatus = status;
     }
 
     private void Jump() {

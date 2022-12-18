@@ -108,7 +108,8 @@ public class Dialogue : MonoBehaviour
             UI_Inventory.SetActive(true);
             if (quest != string.Empty)
             {
-                screenHint.GetComponentInChildren<TextMeshProUGUI>().text = quest;
+                string newText = quest.Replace("\\n", "\n");
+                screenHint.GetComponentInChildren<TextMeshProUGUI>().text = newText;
             }
             
             if (showScreenHint == true)

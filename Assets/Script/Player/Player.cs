@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     private Animator animator;
     private Rigidbody rigid;
     public collidergameover gameOverEvent;
+
+    public bool dialogueStatus = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,8 +84,10 @@ public class Player : MonoBehaviour
                 }
             }
 
+
+
             if (Input.GetKeyUp(KeyCode.Mouse0) && Time.time > nextFire) {
-                if(haveRock) {
+                if (haveRock && dialogueStatus == false) {
                     if(tutorial == false){
                         throwRocksHint.gameObject.SetActive(false);
                         tutorial = true;
@@ -108,6 +112,11 @@ public class Player : MonoBehaviour
         //if (Input.GetButton("Jump")) {
         //    Jump();
         //}
+    }
+
+    public void SetDialogueStatus(bool status)
+    {
+        dialogueStatus = status;
     }
 
     private void Jump() {

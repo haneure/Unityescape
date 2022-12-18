@@ -23,16 +23,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Prison Dungeon/4.DeepTunnel.unity
     guid: 45d3a0732d400794bbff349f7bffdf7b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Medieval Port/4.DeepTunnelNew.unity
     guid: 471e6315f437ee74ab10426e63788e91
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Medieval Port/5.OldSeaPort.unity
     guid: 0af9be4a3cacea2499b66602f3850e18
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Medieval Port/6.MedievalPort.unity
     guid: 91959b83751669f4f8fe0973e7cb89f6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Medieval Port/7.Chapel.unity
     guid: 61211cc9da0777044a120f8f0cc6785b
   m_configObjects:

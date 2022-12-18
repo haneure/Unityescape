@@ -130,21 +130,22 @@ public class Player : MonoBehaviour
 
 
 
-            if (Input.GetKeyUp(KeyCode.Mouse0) && Time.time > nextFire) {
-                if (haveRock && dialogueStatus == false) {
-                    if(tutorial == false){
-                        throwRocksHint.gameObject.SetActive(false);
-                        tutorial = true;
+                if (Input.GetKeyUp(KeyCode.Mouse0) && Time.time > nextFire) {
+                    if (haveRock && dialogueStatus == false) {
+                        if(tutorial == false){
+                            throwRocksHint.gameObject.SetActive(false);
+                            tutorial = true;
+                        }
                     }
                 }
-            }
             
-            //Jump
-            //if (Input.GetButton("Jump")) {
-            //    Jump();
-            //}
-        }
+                //Jump
+                //if (Input.GetButton("Jump")) {
+                //    Jump();
+                //}
+            }
         
+        }
     }
 
     public void SetDialogueStatus(bool status)

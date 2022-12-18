@@ -26,6 +26,9 @@ public class Dialogue : MonoBehaviour
     private int textIndex;
     public GameObject UI_Inventory;
 
+    public bool showScreenHint = false;
+    public GameObject screenHint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +95,10 @@ public class Dialogue : MonoBehaviour
             GameObject.Find("CharacterImage").SetActive(false);
             gameObject.SetActive(false);
             UI_Inventory.SetActive(true);
+            if (showScreenHint == true)
+            {
+                screenHint.SetActive(true);
+            }
         }
     }
 

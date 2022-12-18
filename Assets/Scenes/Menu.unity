@@ -3968,7 +3968,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 296841064}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 948840012}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play1_6
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &296841064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3982,14 +3994,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6598246, b: 0.013207495, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 66b4d947ec78e2d41be550f6bbfdd321, type: 3}
+  m_Texture: {fileID: 2800000, guid: 431cdf28a53820f42b839e4aa1737276, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -8590,7 +8602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -136.28998, y: -58.000015}
+  m_AnchoredPosition: {x: -136.28998, y: -58}
   m_SizeDelta: {x: -333.8968, y: -446.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &591209729
@@ -14807,6 +14819,8 @@ MonoBehaviour:
   playGame1_3: 3.DownstairJail
   playGame1_4: 4.DeepTunnel
   playGame1_5: 3.DownstairJail_percobaan
+  playGame1_6: 5.MedievalPort
+  playGame1_7: 7.Chapel
 --- !u!4 &948840013
 Transform:
   m_ObjectHideFlags: 0
@@ -16449,7 +16463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1029486108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17248,7 +17262,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1069680538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 948840012}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play1_4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1069680538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17262,14 +17288,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6598246, b: 0.013207495, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 66b4d947ec78e2d41be550f6bbfdd321, type: 3}
+  m_Texture: {fileID: 2800000, guid: 7a5455c7e0015b44d8e4ec9a9219ac64, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -26766,7 +26792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -83, y: 45.512}
+  m_AnchoredPosition: {x: -83, y: 45.511993}
   m_SizeDelta: {x: 108.8506, y: 70.1288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698236815
@@ -29676,7 +29702,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1899689322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 948840012}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play1_7
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1899689322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29690,14 +29728,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6598246, b: 0.013207495, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 66b4d947ec78e2d41be550f6bbfdd321, type: 3}
+  m_Texture: {fileID: 2800000, guid: 1002bbb7adeb7fe4492b5fcaa03aa15e, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -32036,7 +32074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 129, y: 45.512}
+  m_AnchoredPosition: {x: 129, y: 45.511993}
   m_SizeDelta: {x: 213.355, y: 70.1288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047439302
@@ -33927,7 +33965,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2140251028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 948840012}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play1_5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2140251028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33941,14 +33991,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6598246, b: 0.013207495, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 66b4d947ec78e2d41be550f6bbfdd321, type: 3}
+  m_Texture: {fileID: 2800000, guid: e03bdb76b3245844691ecb9315992350, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

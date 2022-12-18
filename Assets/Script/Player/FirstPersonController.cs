@@ -218,30 +218,38 @@ public class FirstPersonController : MonoBehaviour
         // {
         //     anim.SetBool("Speed", false);
         // }
-        
+
         #region Camera
 
-        // Control camera movement
-        if(cameraCanMove && !Application.isMobilePlatform)
+        if (Application.isMobilePlatform)
         {
-            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
-
-            if (!invertCamera)
+            hmdTrackedPoseDriver = this.GetComponent<TrackedPoseDriver>();
+            transform.localEulerAngles = new Vector3(0, hmdTrackedPoseDriver.transform.eulerAngles.y, 0);
+        } else
+        {
+            // Control camera movement
+            if (cameraCanMove)
             {
-                pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
-            }
-            else
-            {
-                // Inverted Y
-                pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
-            }
+                yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
-            // Clamp pitch between lookAngle
-            pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+                if (!invertCamera)
+                {
+                    pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
+                }
+                else
+                {
+                    // Inverted Y
+                    pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
+                }
 
-            transform.localEulerAngles = new Vector3(0, yaw, 0);
-            playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+                // Clamp pitch between lookAngle
+                pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+
+                transform.localEulerAngles = new Vector3(0, yaw, 0);
+                playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+            }
         }
+
 
         #region Camera Zoom
 

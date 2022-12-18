@@ -9,8 +9,10 @@ public class MainMenu : MonoBehaviour
     public string playGame1_1 = "1.InsideJail";
     public string playGame1_2 = "2.OutsideJail";
     public string playGame1_3 = "3.DownstairJail";
-    public string playGame1_4 = "4.DeepTunnel";
-    public string playGame1_5 = "3.DownstairJail_percobaan";
+    public string playGame1_4 = "4.DeepTunnelNew";
+    public string playGame1_5 = "5.OldSeaPort";
+    public string playGame1_6 = "5.MedievalPort";
+    public string playGame1_7 = "7.Chapel";
 
     // public SceneFader fader;
     
@@ -63,6 +65,19 @@ public class MainMenu : MonoBehaviour
         // Debug.Log("Play");
         SceneManager.LoadScene(playGame1_5);
     }
+
+    public void Play1_6()
+    {
+        // Debug.Log("Play");
+        SceneManager.LoadScene(playGame1_6);
+    }
+
+    public void Play1_7()
+    {
+        // Debug.Log("Play");
+        SceneManager.LoadScene(playGame1_7);
+    }
+
 
 
     public void Quit()

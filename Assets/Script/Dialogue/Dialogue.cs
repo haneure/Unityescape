@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class DialogueComponent {
@@ -11,6 +12,7 @@ public class DialogueComponent {
     public RawImage character;
     public string lines;
     public Texture2D characterImg;
+    public UnityEvent events;
 }
 
 public class Dialogue : MonoBehaviour
@@ -59,6 +61,10 @@ public class Dialogue : MonoBehaviour
             if (dialogueComponents[index].textComponent.text == dialogueComponents[index].lines)
             {
                 index++;
+                if (dialogueComponents[index-1].events != null)
+                {
+                    dialogueComponents[index-1].events.Invoke();
+                }
                 NextLine();
             }
             else
@@ -93,12 +99,16 @@ public class Dialogue : MonoBehaviour
             }
         } else
         {
+            if (dialogueComponents[index - 1].events != null)
+            {
+                dialogueComponents[index - 1].events.Invoke();
+            }
             GameObject.Find("CharacterImage").SetActive(false);
             gameObject.SetActive(false);
             UI_Inventory.SetActive(true);
             if (quest != string.Empty)
             {
-                screenHint.GetComponent<TextMeshProUGUI>().text = quest;
+                screenHint.GetComponentInChildren<TextMeshProUGUI>().text = quest;
             }
             
             if (showScreenHint == true)

@@ -257,7 +257,7 @@ public class FirstPersonController : MonoBehaviour
         {
             // Changes isZoomed when key is pressed
             // Behavior for toogle zoom
-            if(Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting && !Application.isMobilePlatform || (Input.GetButtonDown("Crouch") && !holdToZoom && !isSprinting && Application.isMobilePlatform))
+            if(!holdToZoom && !isSprinting && ((Input.GetKeyDown(zoomKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
             {
                 if (!isZoomed)
                 {
@@ -351,7 +351,7 @@ public class FirstPersonController : MonoBehaviour
         #region Jump
 
         // Gets input and calls jump method
-        if(enableJump && Input.GetKeyDown(jumpKey) && player.grounded)
+        if(enableJump && ((!Application.isMobilePlatform && Input.GetKey(jumpKey)) || (Application.isMobilePlatform && Input.GetButton("Jump"))) && player.grounded)
         {
             Jump();
         }
@@ -362,17 +362,17 @@ public class FirstPersonController : MonoBehaviour
 
         if (enableCrouch)
         {
-            if((Input.GetKeyDown(crouchKey) && !holdToCrouch && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && !holdToCrouch && Application.isMobilePlatform))
+            if(!holdToCrouch && ((Input.GetKeyDown(crouchKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
             {
                 Crouch();
             }
             
-            if((Input.GetKeyDown(crouchKey) && holdToCrouch && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && holdToCrouch && Application.isMobilePlatform))
+            if(holdToCrouch && ((Input.GetKeyDown(crouchKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
             {
                 isCrouched = false;
                 Crouch();
             }
-            else if((Input.GetKeyUp(crouchKey) && holdToCrouch && !Application.isMobilePlatform) || (Input.GetButtonUp("Crouch") && holdToCrouch && Application.isMobilePlatform))
+            else if(holdToCrouch && ((Input.GetKeyUp(crouchKey) && !Application.isMobilePlatform) || (Input.GetButtonUp("Crouch") && Application.isMobilePlatform)))
             {
                 isCrouched = true;
                 Crouch();
@@ -405,7 +405,8 @@ public class FirstPersonController : MonoBehaviour
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             if(Application.isMobilePlatform)
             {
-                targetVelocity = playerCamera.transform.TransformDirection(-targetVelocity);
+                targetVelocity = playerCamera.transform.TransformDirection(targetVelocity);
+                targetVelocity = transform.InverseTransformDirection(targetVelocity);
             }
 
             float v = Input.GetAxis("Vertical");
@@ -428,7 +429,7 @@ public class FirstPersonController : MonoBehaviour
             }
 
             // All movement calculations shile sprint is active
-            if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
+            if (enableSprint && ((!Application.isMobilePlatform && Input.GetKey(sprintKey)) || (Application.isMobilePlatform && Input.GetButton("Fire3"))) && sprintRemaining > 0f && !isSprintCooldown)
             {
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
 
@@ -526,7 +527,7 @@ public class FirstPersonController : MonoBehaviour
         // Brings walkSpeed back up to original speed
         if(isCrouched)
         {
-            transform.parent.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
             walkSpeed /= speedReduction;
 
             isCrouched = false;
@@ -535,7 +536,7 @@ public class FirstPersonController : MonoBehaviour
         // Reduces walkSpeed
         else
         {
-            transform.parent.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
+            transform.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
             walkSpeed *= speedReduction;
 
             isCrouched = true;

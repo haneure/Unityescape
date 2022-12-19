@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public string leaveGame = "Menu";
     public static bool GameIsPaused = false;
     public FirstPersonController fps;
+    public float holdtime;
 
     public GameObject pauseMenuUI;
     // // Start is called before the first frame update
@@ -19,7 +20,11 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(holdtime>0)
+        {
+            holdtime -= Time.unscaledDeltaTime;
+        }
+        if((Input.GetKeyDown(KeyCode.Escape) && !Application.isMobilePlatform))
         {
             if(GameIsPaused)
             {
@@ -27,6 +32,25 @@ public class PauseMenu : MonoBehaviour
             }
             else{
                 Pause();
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.JoystickButton4) && Application.isMobilePlatform)
+        {
+            holdtime = 5f;
+        }
+
+        if(holdtime>0 && (Input.GetKey(KeyCode.JoystickButton5) && Application.isMobilePlatform))
+        {
+            if(Input.GetKeyDown(KeyCode.JoystickButton2))
+            {
+                if(GameIsPaused)
+                {
+                    Resume();
+                }
+                else{
+                    Pause();
+                }
             }
         }
     }

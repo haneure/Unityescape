@@ -8,6 +8,7 @@ public class Zombie : MonoBehaviour
     [SerializeField] Transform[] point;
     int idxPoint = 0;
     public float speed = 3f;
+    private float initialPursueSpeed;
     public float pursueSpeed = 6f;
     bool comeback = false;
     bool reachPoint = false;
@@ -51,6 +52,7 @@ public class Zombie : MonoBehaviour
         anim = this.GetComponentInChildren(typeof(Animator)) as Animator;
         m_Rigidbody = this.gameObject.GetComponent<Rigidbody>();
         initialStopAfterHitTimer = stopAfterHitTimer;
+        initialPursueSpeed = pursueSpeed;
         fov = this.GetComponentInChildren<ZombieFov>();
         m_MyAudioSource = GetComponent<AudioSource>();
         m_MyAudioSource.loop = true;
@@ -78,16 +80,35 @@ public class Zombie : MonoBehaviour
                 m_MyAudioSource.Stop();
             }
 
-            if (playerDetector.playerTouched)
+            if(stopAfterHit)
             {
-                Debug.Log(playerDetector.playerTouched);
-                anim.SetBool("Crawl", false);
                 m_MyAudioSource.Stop();
-                Stop();
-            } else
+                anim.SetBool("Crawl", false);
+                stopAfterHitTimer--;
+                pursueSpeed = 0;
+                if (stopAfterHitTimer <= 0)
+                {
+                    stopAfterHit = false;
+                    stopAfterHitTimer = initialStopAfterHitTimer;
+                    pursueSpeed = initialPursueSpeed;
+                }
+            }
+
+            if(!stopAfterHit)
             {
                 anim.SetBool("Crawl", true);
+                if (playerDetector.playerTouched == true)
+                {
+                    if (Time.time > lastAttacked + hitDelay)
+                    {
+                        Hit();
+                        stopAfterHit = true;
+                    }
+                    anim.SetBool("Crawl", false);
+                    m_MyAudioSource.Stop();
+                }
             }
+
         } else
         {
             stunTime--;
@@ -230,11 +251,6 @@ public class Zombie : MonoBehaviour
     public void Kick()
     {
         stunned = true;
-    }
-
-    public void Stop()
-    {
-        pursueSpeed = 0;
     }
 
     // IEnumerator Hit(float delay){

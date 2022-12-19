@@ -10,11 +10,14 @@ public class PauseMenu : MonoBehaviour
     public FirstPersonController fps;
 
     public GameObject pauseMenuUI;
+    GameObject compassUI;
+    GameObject uiInventory;
     // // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
+    void Start()
+    {
+        compassUI = GameObject.Find("CompassUI");
+        uiInventory = GameObject.Find("UI_Inventory");
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,9 +26,13 @@ public class PauseMenu : MonoBehaviour
         {
             if(GameIsPaused)
             {
+                compassUI.SetActive(true);
+                uiInventory.SetActive(true);
                 Resume();
             }
             else{
+                compassUI.SetActive(false);
+                uiInventory.SetActive(false);
                 Pause();
             }
         }
@@ -33,6 +40,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume ()
     {
+        compassUI.SetActive(true);
+        uiInventory.SetActive(true);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;

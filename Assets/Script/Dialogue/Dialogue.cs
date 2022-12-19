@@ -48,7 +48,6 @@ public class Dialogue : MonoBehaviour
             dialogueComponents[index].character = GameObject.Find("CharacterImage").GetComponent<RawImage>();
         }
 
-        Debug.Log(dialogueComponents[index].textComponent.text);
         dialogueComponents[index].textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -99,10 +98,6 @@ public class Dialogue : MonoBehaviour
             }
         } else
         {
-            if (dialogueComponents[index - 1].events != null)
-            {
-                dialogueComponents[index - 1].events.Invoke();
-            }
             GameObject.Find("CharacterImage").SetActive(false);
             gameObject.SetActive(false);
             UI_Inventory.SetActive(true);

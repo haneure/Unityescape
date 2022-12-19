@@ -85,7 +85,6 @@ public class Player : MonoBehaviour
             }
 
 
-
             if (Input.GetKeyUp(KeyCode.Mouse0) && Time.time > nextFire) {
                 if (haveRock && dialogueStatus == false) {
                     if(tutorial == false){

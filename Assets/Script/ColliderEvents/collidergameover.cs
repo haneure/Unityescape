@@ -15,12 +15,17 @@ public class collidergameover : MonoBehaviour
     public FirstPersonController fps;
 
     public PauseMenu pauseMenu;
-    
+
+    GameObject compassUI;
+    GameObject uiInventory;
+
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu = GameObject.Find("UI").GetComponentInChildren<PauseMenu>();
         retryGame = SceneManager.GetActiveScene().name;
+        compassUI = GameObject.Find("CompassUI");
+        uiInventory = GameObject.Find("UI_Inventory");
     }
 
     // Update is called once per frame
@@ -30,6 +35,8 @@ public class collidergameover : MonoBehaviour
     }
 
     public void showGameOverUI() {
+        compassUI.SetActive(false);
+        uiInventory.SetActive(false);
         gameOverToshow.gameObject.SetActive(true);
         h_showGameO = true;
         Time.timeScale = 0f;

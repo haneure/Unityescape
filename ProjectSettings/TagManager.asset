@@ -7,6 +7,7 @@ TagManager:
   - ground
   - guard
   - dt_collider
+  - zombie
   layers:
   - Default
   - TransparentFX

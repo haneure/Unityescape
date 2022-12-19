@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     public bool haveRock = false;
 
-    public GameObject throwRocksHint;
+    public GameObject throwRocksHint, body, face;
     bool tutorial = true;
    
     [SerializeField] float fallThresholdVelocity;
@@ -46,6 +46,16 @@ public class Player : MonoBehaviour
         player = this.gameObject.transform.GetChild(0);
         if(throwRocksHint != null) {
             tutorial = false;
+        }
+        if(Application.isMobilePlatform)
+        {
+            body.SetActive(false);
+            face.SetActive(false);
+        }
+        else
+        {
+            body.SetActive(true);
+            face.SetActive(true);
         }
     }
 

@@ -1,4 +1,4 @@
-﻿// CHANGE LOG
+// CHANGE LOG
 // 
 // CHANGES || version VERSION
 //
@@ -223,8 +223,8 @@ public class FirstPersonController : MonoBehaviour
 
         if (Application.isMobilePlatform)
         {
-            hmdTrackedPoseDriver = this.GetComponent<TrackedPoseDriver>();
-            transform.localEulerAngles = new Vector3(0, hmdTrackedPoseDriver.transform.eulerAngles.y, 0);
+            // hmdTrackedPoseDriver = this.GetComponent<TrackedPoseDriver>();
+            // transform.localEulerAngles = new Vector3(0, hmdTrackedPoseDriver.transform.eulerAngles.y, 0);
         } else
         {
             // Control camera movement
@@ -257,7 +257,7 @@ public class FirstPersonController : MonoBehaviour
         {
             // Changes isZoomed when key is pressed
             // Behavior for toogle zoom
-            if(Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting)
+            if(Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting && !Application.isMobilePlatform || (Input.GetButtonDown("Crouch") && !holdToZoom && !isSprinting && Application.isMobilePlatform))
             {
                 if (!isZoomed)
                 {
@@ -526,7 +526,7 @@ public class FirstPersonController : MonoBehaviour
         // Brings walkSpeed back up to original speed
         if(isCrouched)
         {
-            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+            transform.parent.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
             walkSpeed /= speedReduction;
 
             isCrouched = false;
@@ -535,7 +535,7 @@ public class FirstPersonController : MonoBehaviour
         // Reduces walkSpeed
         else
         {
-            transform.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
+            transform.parent.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
             walkSpeed *= speedReduction;
 
             isCrouched = true;

@@ -37,9 +37,15 @@ public class Player : MonoBehaviour
     public collidergameover gameOverEvent;
 
     public bool dialogueStatus = false;
+
+    private AudioSource playerSoundSource;
+    public AudioClip getHitSound;
+    public AudioClip diedSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerSoundSource = GameObject.Find("mouth").GetComponent<AudioSource>();
         gameOverEvent = GetComponent<collidergameover>();
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
@@ -175,5 +181,15 @@ public class Player : MonoBehaviour
 
     private void Jump() {
         if(grounded) rigid.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+    }
+
+    public void GetAttacked()
+    {
+        playerSoundSource.PlayOneShot(getHitSound, 0.8f);
+    }
+
+    public void PlayerDied()
+    {
+        playerSoundSource.PlayOneShot(diedSound, 0.7f);
     }
 }

@@ -8,6 +8,7 @@ public class Zombie : MonoBehaviour
     [SerializeField] Transform[] point;
     int idxPoint = 0;
     public float speed = 3f;
+    private float initialPursueSpeed;
     public float pursueSpeed = 6f;
     bool comeback = false;
     bool reachPoint = false;
@@ -45,183 +46,129 @@ public class Zombie : MonoBehaviour
     AudioSource m_MyAudioSource;
     //public AudioClip sfx;
 
+    public AudioSource zombieMouth;
+    public AudioClip zombieAttackSfx;
+    public AudioClip zombieHitSfx;
+    public AudioClip[] zombieEncounter;
+    public int startEncounter;
+
+
+    public PauseMenu pauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = this.GetComponentInChildren(typeof(Animator)) as Animator;
         m_Rigidbody = this.gameObject.GetComponent<Rigidbody>();
         initialStopAfterHitTimer = stopAfterHitTimer;
+        initialPursueSpeed = pursueSpeed;
         fov = this.GetComponentInChildren<ZombieFov>();
         m_MyAudioSource = GetComponent<AudioSource>();
         m_MyAudioSource.loop = true;
+        zombieMouth = GameObject.Find("ZombieMouth").GetComponent<AudioSource>();
+        pauseMenu = GameObject.Find("Menu").GetComponent<PauseMenu>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (pauseMenu.GameIsPaused) 
+        {
+            m_MyAudioSource.Stop();
+        }
+
         if (!stunned)
         {
             Vector3 posPlayer = new Vector3(fov.playerRef.transform.position.x, this.transform.position.y, fov.playerRef.transform.position.z);
-            //Debug.Log(posPlayer);
-            //Debug.Log(fov.canSeePlayer);
 
             if (fov.canSeePlayer == true)
             {
+                startEncounter++;
+                if(startEncounter <= 1 && !zombieMouth.isPlaying)
+                {
+                    int encounterRng = Random.Range(0, 4);
+                    zombieMouth.PlayOneShot(zombieEncounter[encounterRng]);
+                }
+
                 this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, pursueSpeed * Time.deltaTime);
                 if (!m_MyAudioSource.isPlaying)
                 {
-                    m_MyAudioSource.Play();
+                    if(!pauseMenu.GameIsPaused)
+                    {
+                        if(!stunned)
+                        {
+                            m_MyAudioSource.Play();
+                        }
+                    }
                 }
             } else
             {
+                startEncounter = 0;
                 anim.SetBool("Crawl", false);
                 m_MyAudioSource.Stop();
             }
 
-            if (playerDetector.playerTouched)
+            if(stopAfterHit)
             {
-                Debug.Log(playerDetector.playerTouched);
-                anim.SetBool("Crawl", false);
                 m_MyAudioSource.Stop();
-                Stop();
-            } else
-            {
-                anim.SetBool("Crawl", true);
+                anim.SetBool("Crawl", false);
+                stopAfterHitTimer--;
+                pursueSpeed = 0;
+                if (stopAfterHitTimer <= 0)
+                {
+                    stopAfterHit = false;
+                    stopAfterHitTimer = initialStopAfterHitTimer;
+                    pursueSpeed = initialPursueSpeed;
+                }
             }
+
+            if(!stopAfterHit)
+            {
+                if (!stunned)
+                {
+                    anim.SetBool("Crawl", true);
+                }
+                
+                if (playerDetector.playerTouched == true)
+                {
+                    if (Time.time > lastAttacked + hitDelay)
+                    {
+                        Attack();
+                        stopAfterHit = true;
+                    }
+                    anim.SetBool("Crawl", false);
+                    m_MyAudioSource.Stop();
+                }
+            }
+
         } else
         {
             stunTime--;
             if (stunTime == 0)
             {
-                anim.SetBool("Crawl", false);
+                anim.SetBool("Crawl", true);
                 stunned = false;
             }
         }
-        //if (!stunned)
-        //{
-        //    Vector3 posPlayer = new Vector3(fov.playerRef.transform.position.x, this.transform.position.y, fov.playerRef.transform.position.z);
-
-        //    if (stopAfterHit)
-        //    {
-        //        stopAfterHitTimer--;
-        //        if (stopAfterHitTimer <= 0)
-        //        {
-        //            stopAfterHit = false;
-        //            stopAfterHitTimer = initialStopAfterHitTimer;
-        //        }
-        //    }
-
-        //    if (playerDetector.playerTouched)
-        //    {
-        //        if (Time.time > lastAttacked + hitDelay)
-        //        {
-        //            Hit();
-        //        }
-        //    }
-
-        //    if (comeback == false)
-        //    {
-        //        if (!stopAfterHit)
-        //        {
-        //            if (!pursue)
-        //            {
-
-        //            }
-        //            else
-        //            {
-        //                this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, pursueSpeed * Time.deltaTime);
-        //            }
-        //        }
-
-
-        //        if (!reachPoint)
-        //        {
-        //            if (!pursue)
-        //            {
-
-        //            }
-        //            else
-        //            {
-        //                Vector3 posPoint = posPlayer - this.transform.position;
-        //                this.transform.rotation = Quaternion.LookRotation(posPoint);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (idxPoint == 0)
-        //            {
-        //                this.transform.rotation = Quaternion.Slerp(transform.rotation, point[idxPoint].rotation, Time.deltaTime * 1f);
-        //            }
-        //        }
-
-
-        //        posMusuh = new Vector3(this.transform.position.x, point[idxPoint].position.y, this.transform.position.z);
-
-        //    }
-        //    else
-        //    {
-        //        // this.transform.position = Vector3.MoveTowards(this.transform.position, posTarget, speed * Time.deltaTime);
-
-        //        if (!stopAfterHit)
-        //        {
-        //            if (!pursue)
-        //            {
-        //                anim.SetBool("Crawl", false);
-        //            }
-        //            else
-        //            {
-        //                anim.SetBool("Crawl", true);
-        //                this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, pursueSpeed * Time.deltaTime);
-        //            }
-        //        }
-
-        //        if (!pursue)
-        //        {
-        //        }
-        //        else
-        //        {
-        //            Vector3 posPoint = posPlayer - this.transform.position;
-        //            this.transform.rotation = Quaternion.LookRotation(posPoint);
-        //        }
-
-        //        posMusuh = new Vector3(this.transform.position.x, point[idxPoint].position.y, this.transform.position.z);
-        //        if (Vector3.Distance(posMusuh, point[idxPoint].position) < 0.1f)
-        //        {
-        //            this.transform.rotation = point[idxPoint].transform.rotation;
-        //            idxPoint -= 1;
-        //            if (idxPoint <= 0)
-        //            {
-        //                idxPoint = 0;
-        //                comeback = false;
-        //            }
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    stunTime--;
-        //    Quaternion target = Quaternion.Euler(0, 360, 0);
-        //    this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, target, 2f * Time.deltaTime);
-        //    if (stunTime == 0)
-        //    {
-        //        stunned = false;
-        //    }
-        //}
-
     }
 
     public void pushed()
     {
         Debug.Log("kya aku didorong");
         m_Rigidbody.AddForce(transform.forward * m_Thrust);
+        zombieMouth.PlayOneShot(zombieHitSfx);
     }
 
-    public void Hit()
+    public void Attack()
     {
+        zombieMouth.PlayOneShot(zombieAttackSfx);
         stopAfterHit = true;
         playerDetector.player.healthPoint -= hitDamage;
+        playerDetector.player.GetAttacked();
         if (playerDetector.player.healthPoint <= 0)
         {
+            GameObject.Find("Reticle").SetActive(false);
+            playerDetector.player.PlayerDied();
             gameOverEvent.showGameOverUI();
         }
         lastAttacked = Time.time;
@@ -230,11 +177,6 @@ public class Zombie : MonoBehaviour
     public void Kick()
     {
         stunned = true;
-    }
-
-    public void Stop()
-    {
-        pursueSpeed = 0;
     }
 
     // IEnumerator Hit(float delay){

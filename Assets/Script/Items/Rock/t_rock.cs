@@ -5,6 +5,7 @@ using UnityEngine;
 public class t_rock : MonoBehaviour
 {
     Guard guard;
+    Zombie zombie;
 
     public AudioSource rockAudio;
     private float openDelay = 0;
@@ -24,7 +25,15 @@ public class t_rock : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "zombie")
+        {
+            zombie = GameObject.Find(other.gameObject.name).GetComponent<Zombie>();
+            zombie.stunTime = 2000;
+            zombie.stunned = true;
+            zombie.zombieMouth.PlayOneShot(zombie.zombieHitSfx);
+        }
+
         if(other.gameObject.tag == "guard" || other.transform.root.CompareTag("guard") || other.gameObject.tag == "ground") {
             rockAudio = this.gameObject.AddComponent<AudioSource>();
             rockAudio.PlayOneShot(rockThrow, volume);

@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Medieval Port/5.OldSeaPort.unity
     guid: 0af9be4a3cacea2499b66602f3850e18
   - enabled: 1
+    path: Assets/Scenes/Medieval Port/6.MedievalPort-Cutscene.unity
+    guid: 570895038b83f3a47a962e62d7743ccc
+  - enabled: 1
     path: Assets/Scenes/Medieval Port/6.MedievalPort.unity
     guid: 91959b83751669f4f8fe0973e7cb89f6
   - enabled: 1

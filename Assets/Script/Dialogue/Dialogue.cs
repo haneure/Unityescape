@@ -55,9 +55,8 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((!Application.isMobilePlatform && (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.E))) || (Application.isMobilePlatform && Input.GetButtonDown("Fire1")))
+        if ((!Application.isMobilePlatform && (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.E))) || (Application.isMobilePlatform && Input.GetButtonDown("Fire2")))
 
-        // Todo, samain buat vr
         {
             if (dialogueComponents[index].textComponent.text == dialogueComponents[index].lines)
             {

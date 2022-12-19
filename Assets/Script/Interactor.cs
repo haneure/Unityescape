@@ -10,17 +10,25 @@ public class Interactor : MonoBehaviour
     public Image interactImage;
     public Sprite defaultIcon, defaultInteractIcon;
     public Vector2 defaultIconSize, defaultInteractIconSize;
+    public float rayLength;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(Application.isMobilePlatform)
+        {
+            rayLength = 2.5f;
+        }
+        else
+        {
+            rayLength = 2f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, InteractableLayerMask))
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rayLength, InteractableLayerMask))
         {
             if(hit.collider.GetComponent<Interactable>() != false)
             {
@@ -46,9 +54,19 @@ public class Interactor : MonoBehaviour
                     interactImage.sprite = defaultInteractIcon;
                     interactImage.rectTransform.sizeDelta = defaultInteractIconSize;
                 }
-                if (Input.GetKeyDown(KeyCode.E))
+                if(Application.isMobilePlatform)
                 {
-                    interactable.onInteract.Invoke();
+                    if (Input.GetButtonDown("Fire2"))
+                    {
+                        interactable.onInteract.Invoke();
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        interactable.onInteract.Invoke();
+                    }
                 }
             }
         }

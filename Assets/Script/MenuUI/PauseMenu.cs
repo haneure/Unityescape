@@ -31,12 +31,19 @@ public class PauseMenu : MonoBehaviour
         {
             if(GameIsPaused)
             {
-                compassUI.SetActive(true);
+                if (compassUI != null)
+                {
+                    compassUI.SetActive(true);
+                }
+                
                 uiInventory.SetActive(true);
                 Resume();
             }
             else{
-                compassUI.SetActive(false);
+                if(compassUI != null)
+                {
+                    compassUI.SetActive(false);
+                }
                 uiInventory.SetActive(false);
                 Pause();
             }
@@ -64,7 +71,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume ()
     {
-        compassUI.SetActive(true);
+        if(compassUI != null)
+        {
+            compassUI.SetActive(true);
+        }
         uiInventory.SetActive(true);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;

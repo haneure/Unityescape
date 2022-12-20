@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     public AudioClip getHitSound;
     public AudioClip diedSound;
 
+    public CapsuleCollider capsuleCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         player = this.gameObject.transform.GetChild(0);
+        capsuleCollider = GetComponent<CapsuleCollider>();
         if(throwRocksHint != null) {
             tutorial = false;
         }
@@ -83,6 +86,14 @@ public class Player : MonoBehaviour
             }
 
             animator.SetBool("Jump", false);
+        }
+
+        if(grounded)
+        {
+            if (Input.GetButtonDown("Crouch"))
+            {
+                capsuleCollider.height = capsuleCollider.height / 2;
+            }
         }
 
         healthUI.text = "HP: " + Mathf.RoundToInt(healthPoint);

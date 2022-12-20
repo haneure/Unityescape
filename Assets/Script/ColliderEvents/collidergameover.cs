@@ -35,7 +35,10 @@ public class collidergameover : MonoBehaviour
     }
 
     public void showGameOverUI() {
-        compassUI.SetActive(false);
+        if(compassUI != null)
+        {
+            compassUI.SetActive(false);
+        }
         uiInventory.SetActive(false);
         gameOverToshow.gameObject.SetActive(true);
         h_showGameO = true;

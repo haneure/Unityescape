@@ -22,7 +22,12 @@ public class Inventory : MonoBehaviour
     }
 
     public void insertToInventory(GameObject item) {
-        inventory.Insert(inventory.Count, item);
+        Debug.Log(inventory.Count);
+        if(inventory.Count < 5)
+        {
+            inventory.Insert(inventory.Count, item);
+        }
+        //inventory.Insert(inventory.Count, item);
         Debug.Log(item.name + " added to inventory");
     }
 

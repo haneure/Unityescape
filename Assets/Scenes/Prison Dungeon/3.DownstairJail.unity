@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18296304, g: 0.22865374, b: 0.30683592, a: 1}
+  m_IndirectSpecularColor: {r: 0.18296358, g: 0.22865449, b: 0.30683723, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -11473,7 +11473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3995641167535062227, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 215.53998
+      value: 215.53996
       objectReference: {fileID: 0}
     - target: {fileID: 3995641167843684863, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -17447,6 +17447,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2, type: 3}
       propertyPath: m_Name
       value: w
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4aa5a7ef56dd26f4d8cdad18e6dd51d2, type: 3}
       propertyPath: m_RootOrder
@@ -106682,6 +106686,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -171.72998
       objectReference: {fileID: 0}
+    - target: {fileID: 7258505348544855947, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25.612999
+      objectReference: {fileID: 0}
     - target: {fileID: 7258505349291780604, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_Name
       value: UI
@@ -127738,9 +127746,9 @@ MonoBehaviour:
   haveKey: 0
   keyhole: {fileID: 1430070620}
   inventori: {fileID: 947239422}
-  showWinUI: {fileID: 2060030364}
+  showWinUI: {fileID: 2060030361}
   jailOpenAudio: {fileID: 1870254821}
---- !u!114 &2060030364
+--- !u!114 &2060030361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

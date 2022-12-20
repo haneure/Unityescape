@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29790083, g: 0.4541627, b: 0.7654497, a: 1}
+  m_IndirectSpecularColor: {r: NaN, g: NaN, b: NaN, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9354,7 +9354,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 45dcdbf10bd28a545b338038c1f996ef, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2fc977de12e2b0045aea9b963d09a678, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cccd9e1a76ea15a41af70debc467ea6b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.05
   m_Pitch: 1
@@ -40024,6 +40024,7 @@ MonoBehaviour:
   dialogueStatus: 0
   getHitSound: {fileID: 0}
   diedSound: {fileID: 0}
+  capsuleCollider: {fileID: 0}
 --- !u!114 &742802903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70896,6 +70897,7 @@ MonoBehaviour:
   dialogueStatus: 0
   getHitSound: {fileID: 0}
   diedSound: {fileID: 0}
+  capsuleCollider: {fileID: 0}
 --- !u!114 &1348915867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76409,6 +76411,7 @@ MonoBehaviour:
   dialogueStatus: 0
   getHitSound: {fileID: 0}
   diedSound: {fileID: 0}
+  capsuleCollider: {fileID: 0}
 --- !u!136 &1472982012
 CapsuleCollider:
   m_ObjectHideFlags: 0

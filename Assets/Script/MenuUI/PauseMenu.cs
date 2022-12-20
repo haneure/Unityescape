@@ -109,5 +109,9 @@ public class PauseMenu : MonoBehaviour
         fps.enabled = true;
         pauseMenuUI.SetActive(false);
     }
-
+    public void Quit()
+    {
+        Debug.Log("Exiting....");
+        Application.Quit();
+    }
 }

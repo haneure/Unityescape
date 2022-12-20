@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3937,6 +3937,7 @@ GameObject:
   - component: {fileID: 99473127}
   - component: {fileID: 99473126}
   - component: {fileID: 99473125}
+  - component: {fileID: 99473129}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -4044,6 +4045,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!124 &99473129
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99473124}
+  m_Enabled: 1
 --- !u!1001 &99572143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77692,9 +77701,9 @@ Canvas:
   m_GameObject: {fileID: 1849301748}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 99473127}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -90285,9 +90294,9 @@ Canvas:
   m_GameObject: {fileID: 7179372863295462743}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 99473127}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -90398,6 +90407,18 @@ PrefabInstance:
     - target: {fileID: 1439795297220137239, guid: 75ab5f13b98f3a248a6a8f58f3d8765e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439795298099018292, guid: 75ab5f13b98f3a248a6a8f58f3d8765e, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 99473127}
+    - target: {fileID: 1439795298099018292, guid: 75ab5f13b98f3a248a6a8f58f3d8765e, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439795298099018292, guid: 75ab5f13b98f3a248a6a8f58f3d8765e, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75ab5f13b98f3a248a6a8f58f3d8765e, type: 3}
@@ -90525,6 +90546,18 @@ PrefabInstance:
     - target: {fileID: 3538456100581960047, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538456100704288185, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 99473127}
+    - target: {fileID: 3538456100704288185, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538456100704288185, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}

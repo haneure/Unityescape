@@ -367,7 +367,7 @@ public class FirstPersonController : MonoBehaviour
                 Crouch();
             }
             
-            if(holdToCrouch && ((Input.GetKeyDown(crouchKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
+            if(holdToCrouch && ((Input.GetKey(crouchKey) && !Application.isMobilePlatform) || (Input.GetButton("Crouch") && Application.isMobilePlatform)))
             {
                 isCrouched = false;
                 Crouch();

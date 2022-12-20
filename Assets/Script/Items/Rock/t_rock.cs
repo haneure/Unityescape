@@ -6,6 +6,7 @@ public class t_rock : MonoBehaviour
 {
     Guard guard;
     Zombie zombie;
+    GuardRefurbished guardRefurbished;
 
     public AudioSource rockAudio;
     private float openDelay = 0;
@@ -34,7 +35,17 @@ public class t_rock : MonoBehaviour
             zombie.zombieMouth.PlayOneShot(zombie.zombieHitSfx);
         }
 
-        if(other.gameObject.tag == "guard" || other.transform.root.CompareTag("guard") || other.gameObject.tag == "ground") {
+        if (other.gameObject.tag == "guardRefurbished")
+        {
+            guardRefurbished = GameObject.Find(other.gameObject.name).GetComponent<GuardRefurbished>();
+            guardRefurbished.stunTime = 1000;
+            guardRefurbished.stunned = true;
+            guardRefurbished.zombieMouth.PlayOneShot(guardRefurbished.zombieHitSfx);
+        }
+
+
+
+        if (other.gameObject.tag == "guard" || other.transform.root.CompareTag("guard") || other.gameObject.tag == "ground") {
             rockAudio = this.gameObject.AddComponent<AudioSource>();
             rockAudio.PlayOneShot(rockThrow, volume);
             Debug.Log(other.gameObject.tag);

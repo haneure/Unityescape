@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie : MonoBehaviour
+public class GuardRefurbished : MonoBehaviour
 {
     private Animator anim;
     [SerializeField] Transform[] point;
@@ -22,7 +22,7 @@ public class Zombie : MonoBehaviour
     Rigidbody m_Rigidbody;
     public float m_Thrust = 20f;
 
-    public ZombieFov fov;
+    public GuardRefurbished_Fov fov;
     public bool pursue = false;
     public guard_PlayerDetect playerDetector;
 
@@ -62,7 +62,7 @@ public class Zombie : MonoBehaviour
         m_Rigidbody = this.gameObject.GetComponent<Rigidbody>();
         initialStopAfterHitTimer = stopAfterHitTimer;
         initialPursueSpeed = pursueSpeed;
-        fov = this.GetComponentInChildren<ZombieFov>();
+        fov = this.GetComponentInChildren<GuardRefurbished_Fov>();
         m_MyAudioSource = GetComponent<AudioSource>();
         m_MyAudioSource.loop = true;
         zombieMouth = GameObject.Find("ZombieMouth").GetComponent<AudioSource>();
@@ -72,53 +72,109 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pause || stunned || stopAfterHit)
+        {
+            anim.SetBool("Speed", false);
+        }
+        else
+        {
+            anim.SetBool("Speed", true);
+        }
+
         if (pauseMenu.GameIsPaused) 
         {
             m_MyAudioSource.Stop();
         }
 
+        if (fov.canSeePlayer == false && startEncounter > 0)
+        {
+            startEncounter = 0;
+            m_MyAudioSource.Stop();
+        }
+
         if (!stunned)
         {
-            Vector3 posPlayer = new Vector3(fov.playerRef.transform.position.x, this.transform.position.y, fov.playerRef.transform.position.z);
-
-            if (fov.canSeePlayer == true)
+            if(!stopAfterHit)
             {
-                startEncounter++;
-                if(startEncounter <= 1 && !zombieMouth.isPlaying)
+                if (!pursue)
                 {
-                    int encounterRng = Random.Range(0, 4);
-                    zombieMouth.PlayOneShot(zombieEncounter[encounterRng]);
-                }
-
-                this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, pursueSpeed * Time.deltaTime);
-                if (!m_MyAudioSource.isPlaying)
-                {
-                    if(!pauseMenu.GameIsPaused)
+                    Vector3 posTarget = new Vector3(point[idxPoint].position.x, this.transform.position.y, point[idxPoint].position.z);
+                    if (!comeback)
                     {
-                        if(!stunned)
+                        //Waypoint
+                        this.transform.position = Vector3.MoveTowards(this.transform.position, posTarget, speed * Time.deltaTime);
+
+                        Vector3 posPoint = posTarget - this.transform.position;
+                        this.transform.rotation = Quaternion.LookRotation(posPoint);
+
+                        posMusuh = new Vector3(this.transform.position.x, point[idxPoint].position.y, this.transform.position.z);
+
+                        if (Vector3.Distance(posMusuh, point[idxPoint].position) < 0.1f)
                         {
-                            m_MyAudioSource.Play();
+                            reachPoint = false;
+                            idxPoint += 1;
+                            if (idxPoint >= point.Length)
+                            {
+                                idxPoint = point.Length - 1;
+                                comeback = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        this.transform.position = Vector3.MoveTowards(this.transform.position, posTarget, speed * Time.deltaTime);
+
+                        Vector3 posPoint = posTarget - this.transform.position;
+                        this.transform.rotation = Quaternion.LookRotation(posPoint);
+
+                        posMusuh = new Vector3(this.transform.position.x, point[idxPoint].position.y, this.transform.position.z);
+
+                        if (Vector3.Distance(posMusuh, point[idxPoint].position) < 0.1f)
+                        {
+                            this.transform.rotation = point[idxPoint].transform.rotation;
+                            idxPoint -= 1;
+                            if (idxPoint <= 0)
+                            {
+                                idxPoint = 0;
+                                comeback = false;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    //Pursue
+                    Vector3 posPlayer = new Vector3(fov.playerRef.transform.position.x, this.transform.position.y, fov.playerRef.transform.position.z);
+
+                    if (fov.canSeePlayer == true)
+                    {
+                        startEncounter++;
+                        if (startEncounter <= 1 && !zombieMouth.isPlaying)
+                        {
+                            int encounterRng = Random.Range(0, zombieEncounter.Length);
+                            zombieMouth.PlayOneShot(zombieEncounter[encounterRng]);
+                        }
+
+                        this.transform.position = Vector3.MoveTowards(this.transform.position, posPlayer, pursueSpeed * Time.deltaTime);
+                        if (!m_MyAudioSource.isPlaying)
+                        {
+                            if (!pauseMenu.GameIsPaused)
+                            {
+                                if (!stunned)
+                                {
+                                    m_MyAudioSource.Play();
+                                }
+                            }
                         }
                     }
                 }
             } else
             {
-                startEncounter = 0;
-                anim.SetBool("Crawl", false);
-                m_MyAudioSource.Stop();
-            }
-
-            if(stopAfterHit)
-            {
-                m_MyAudioSource.Stop();
-                anim.SetBool("Crawl", false);
                 stopAfterHitTimer--;
-                pursueSpeed = 0;
                 if (stopAfterHitTimer <= 0)
                 {
                     stopAfterHit = false;
                     stopAfterHitTimer = initialStopAfterHitTimer;
-                    pursueSpeed = initialPursueSpeed;
                 }
             }
 
@@ -126,7 +182,7 @@ public class Zombie : MonoBehaviour
             {
                 if (!stunned)
                 {
-                    anim.SetBool("Crawl", true);
+                   
                 }
                 
                 if (playerDetector.playerTouched == true)
@@ -136,17 +192,18 @@ public class Zombie : MonoBehaviour
                         Attack();
                         stopAfterHit = true;
                     }
-                    anim.SetBool("Crawl", false);
+                    
                     m_MyAudioSource.Stop();
                 }
             }
 
         } else
         {
+            anim.SetBool("IsDizzy", true);
             stunTime--;
             if (stunTime == 0)
             {
-                anim.SetBool("Crawl", true);
+                anim.SetBool("IsDizzy", false);
                 stunned = false;
             }
         }
@@ -155,7 +212,6 @@ public class Zombie : MonoBehaviour
     public void pushed()
     {
         Debug.Log("kya aku didorong");
-        stunned = true;
         m_Rigidbody.AddForce(transform.forward * m_Thrust);
         zombieMouth.PlayOneShot(zombieHitSfx);
     }
@@ -172,6 +228,7 @@ public class Zombie : MonoBehaviour
             playerDetector.player.PlayerDied();
             gameOverEvent.showGameOverUI();
         }
+        anim.SetTrigger("HitPlayer");
         lastAttacked = Time.time;
     }
 

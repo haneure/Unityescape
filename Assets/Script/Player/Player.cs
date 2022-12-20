@@ -114,21 +114,24 @@ public class Player : MonoBehaviour
                 }
 
                 if (Input.GetButtonUp("Fire1") && Time.time > nextFire) {
-                    if(haveRock) {
-                        if(tutorial == false){
+                    if (haveRock) {
+                        if (tutorial == false) {
                             throwRocksHint.gameObject.SetActive(false);
                             tutorial = true;
                         }
-                        
+
                         nextFire = Time.time + fireRate;
-                        GameObject projectile = Instantiate(bullet)as GameObject;
+                        GameObject projectile = Instantiate(bullet) as GameObject;
                         Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + adjustY, transform.position.z);
 
                         projectile.transform.position = spawnPosition + Camera.main.transform.forward * 2;
                         Rigidbody rb = projectile.GetComponent<Rigidbody>();
-                        rb.velocity= Camera.main.transform.forward * 40;
+                        rb.velocity = Camera.main.transform.forward * 40;
+
                         inventori.deleteFromInventory("Rock");
                         haveRock = false;
+                        
+                        
                     } else {
                         Debug.Log("Rock is not in your inventory");
                     }
@@ -203,4 +206,11 @@ public class Player : MonoBehaviour
     {
         playerSoundSource.PlayOneShot(diedSound, 0.7f);
     }
+
+    public void GivePlayerHeal(AudioClip healSfx)
+    {
+        healthPoint = 100;
+        playerSoundSource.PlayOneShot(healSfx, 0.7f);
+    }
+
 }

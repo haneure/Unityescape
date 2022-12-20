@@ -5,31 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: f52d298d05804a64880dd4f731a9cc6b
   - enabled: 0
     path: Assets/Scenes/Old Sea Port.unity
     guid: e3dc763260288be4bac1a6cd8605b4e8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prison Dungeon/1.InsideJail.unity
     guid: d39f3e683be412640b84d26a3d59c533
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prison Dungeon/2.OutsideJail.unity
     guid: 9a73f614d3a02db45a924b7cee1298b5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prison Dungeon/3.DownstairJail.unity
     guid: e0c9f60a9328aea46a961cfd107e02b4
   - enabled: 0
     path: Assets/Scenes/Prison Dungeon/4.DeepTunnel.unity
     guid: 45d3a0732d400794bbff349f7bffdf7b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Medieval Port/4.DeepTunnelNew.unity
     guid: 471e6315f437ee74ab10426e63788e91
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Medieval Port/5.OldSeaPort-Cutscene.unity
     guid: e7dab41fb5b433744a404690b132a40c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Medieval Port/5.OldSeaPort.unity
     guid: 0af9be4a3cacea2499b66602f3850e18
   - enabled: 0
@@ -38,10 +38,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Medieval Port/6.MedievalPort.unity
     guid: 91959b83751669f4f8fe0973e7cb89f6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Medieval Port/7.Chapel-Cutscene.unity
     guid: 25f5c9a516f15a44296bf8a3a20065b3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Medieval Port/7.Chapel.unity
     guid: 61211cc9da0777044a120f8f0cc6785b
   m_configObjects:

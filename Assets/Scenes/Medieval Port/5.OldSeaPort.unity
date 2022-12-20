@@ -28859,6 +28859,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 239.07
       objectReference: {fileID: 0}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1122846372}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -35066,6 +35078,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1645223030}
     m_Modifications:
+    - target: {fileID: 9139809630225357701, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 132.31323
+      objectReference: {fileID: 0}
     - target: {fileID: 9139809630225357702, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_text
       value: ' lorem ipsum blablabla lorem ipsum blablabla lorem ipsum blablabla
@@ -35075,6 +35091,18 @@ PrefabInstance:
     - target: {fileID: 9139809630254947058, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 239.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1122846372}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -71378,6 +71406,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 239.07
       objectReference: {fileID: 0}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1122846372}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -71432,7 +71472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395629, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.5850215
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395629, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -71440,23 +71480,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395629, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000027446179
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395629, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395629, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395629, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.862888
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395629, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.2413229
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395629, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

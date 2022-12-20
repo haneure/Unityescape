@@ -15347,9 +15347,9 @@ MonoBehaviour:
   playGame1_1: 1.InsideJail
   playGame1_2: 2.OutsideJail
   playGame1_3: 3.DownstairJail
-  playGame1_4: 4.DeepTunnel
-  playGame1_5: 3.DownstairJail_percobaan
-  playGame1_6: 5.MedievalPort
+  playGame1_4: 4.DeepTunnelNew
+  playGame1_5: 5.OldSeaPort
+  playGame1_6: 6.MedievalPort
   playGame1_7: 7.Chapel
 --- !u!4 &948840013
 Transform:
@@ -15358,8 +15358,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948840011}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.000061035156, y: 0.000061035156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33660,6 +33660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 45dcdbf10bd28a545b338038c1f996ef, type: 2}
+  pauseMenu: {fileID: 0}
 --- !u!4 &2090969466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 436916, guid: 287711fb95cdc004b814e53a055b4b1e, type: 3}

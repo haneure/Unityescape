@@ -2784,6 +2784,16 @@ PrefabInstance:
     - {fileID: 11400000, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
     - {fileID: 11400004, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+--- !u!1 &1906301763577789224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100322, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+  m_PrefabInstance: {fileID: 1906301763577756874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1906301763577789340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100182, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+  m_PrefabInstance: {fileID: 1906301763577756874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1906301763577789386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
@@ -2993,6 +3003,8 @@ MonoBehaviour:
   inventori: {fileID: 1906301764104252175}
   haveRock: 0
   throwRocksHint: {fileID: 0}
+  body: {fileID: 1906301763577789340}
+  face: {fileID: 1906301763577789224}
   fallThresholdVelocity: 20
   groundCheck: {fileID: 1906301763784098371}
   groundDistance: 0.2
@@ -3025,6 +3037,7 @@ MonoBehaviour:
   defaultInteractIcon: {fileID: 21300000, guid: f3e4cc1dd82f5004c92a3ada00448907, type: 3}
   defaultIconSize: {x: 50, y: 50}
   defaultInteractIconSize: {x: 1000, y: 1000}
+  rayLength: 0
 --- !u!4 &1906301763578144298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}

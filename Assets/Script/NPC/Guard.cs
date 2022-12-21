@@ -247,8 +247,10 @@ public class Guard : MonoBehaviour
     public void Hit() {
         stopAfterHit = true;
         playerDetector.player.healthPoint -= hitDamage;
-        if(playerDetector.player.healthPoint <= 0) {
-            gameOverEvent.showGameOverUI();
+        playerDetector.player.GetAttacked();
+        if (playerDetector.player.healthPoint <= 0) {
+            playerDetector.player.healthPoint = 0f;
+            playerDetector.player.gameOver();
         }
         anim.SetTrigger("HitPlayer");
         lastAttacked = Time.time;

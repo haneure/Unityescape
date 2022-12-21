@@ -18,6 +18,8 @@ public class collidergameover : MonoBehaviour
 
     GameObject compassUI;
     GameObject uiInventory;
+    GameObject questUI;
+    GameObject dialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +33,23 @@ public class collidergameover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        questUI = GameObject.Find("QuestUI");
+        dialogue = GameObject.Find("Dialogue");
     }
 
     public void showGameOverUI() {
-        compassUI.SetActive(false);
+        if (compassUI != null)
+        {
+            compassUI.SetActive(false);
+        }
+        if (questUI != null)
+        {
+            questUI.SetActive(false);
+        }
+        if (dialogue != null)
+        {
+            dialogue.SetActive(false);
+        }
         uiInventory.SetActive(false);
         gameOverToshow.gameObject.SetActive(true);
         h_showGameO = true;

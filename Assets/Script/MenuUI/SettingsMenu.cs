@@ -6,6 +6,15 @@ using UnityEngine.Audio;
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    public PauseMenu pauseMenu;
+
+    void Start()
+    {
+        pauseMenu = GameObject.Find("Menu").GetComponent<PauseMenu>();
+    }
+    void Update()
+    {
+    }
 
     public void SetVolume (float volume)
     {

@@ -155,6 +155,7 @@ public class Zombie : MonoBehaviour
     public void pushed()
     {
         Debug.Log("kya aku didorong");
+        stunned = true;
         m_Rigidbody.AddForce(transform.forward * m_Thrust);
         zombieMouth.PlayOneShot(zombieHitSfx);
     }
@@ -167,9 +168,10 @@ public class Zombie : MonoBehaviour
         playerDetector.player.GetAttacked();
         if (playerDetector.player.healthPoint <= 0)
         {
+            playerDetector.player.healthPoint = 0;
             GameObject.Find("Reticle").SetActive(false);
-            playerDetector.player.PlayerDied();
-            gameOverEvent.showGameOverUI();
+            playerDetector.player.gameOver();
+            //gameOverEvent.showGameOverUI();
         }
         lastAttacked = Time.time;
     }

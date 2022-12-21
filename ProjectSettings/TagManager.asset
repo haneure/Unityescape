@@ -8,6 +8,7 @@ TagManager:
   - guard
   - dt_collider
   - zombie
+  - guardRefurbished
   layers:
   - Default
   - TransparentFX

@@ -1,2 +1,2 @@
-# escape-game
-Repository for IF682-AL game project
+# Unityescape
+Repository for IF682-AL VR game project

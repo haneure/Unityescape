@@ -50980,9 +50980,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1645572997}
+        m_TargetAssemblyTypeName: Compass, Assembly-CSharp
+        m_MethodName: CompleteQuestMarker
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Sconce_Torch_1A5(LIT)
+          m_BoolArgument: 1
+        m_CallState: 2
   ID: 0
   interactIcon: {fileID: 0}
   iconSize: {x: 0, y: 0}
+--- !u!114 &1275027711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275027703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87dcc7161006c964e90a3dfef9f4ec86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 5d19edda07749624e81a35fd4b2c26e8, type: 3}
+  image: {fileID: 0}
+  questCompleted: 0
 --- !u!1001 &1277365160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53902,7 +53929,7 @@ PrefabInstance:
     - target: {fileID: 9139809631664498273, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: dialogueComponents.Array.data[3].events.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 970381586}
+      objectReference: {fileID: 1275027711}
     - target: {fileID: 9139809631664498273, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: dialogueComponents.Array.data[0].events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine

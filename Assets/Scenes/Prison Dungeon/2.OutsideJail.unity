@@ -136032,7 +136032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2283426183973015265, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: obstructionMask.m_Bits
-      value: 1024
+      value: 1280
       objectReference: {fileID: 0}
     - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: hitDelay
@@ -136052,7 +136052,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: pauseWaypoint1Timer
-      value: 250
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
+      propertyPath: pauseWaypoint6Timer
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
+      propertyPath: pauseWaypoint7Timer
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2283426183973015267, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: point.Array.data[0]

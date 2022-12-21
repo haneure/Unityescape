@@ -47036,7 +47036,7 @@ PrefabInstance:
       objectReference: {fileID: 1154016778}
     - target: {fileID: 7258505348012148111, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7258505348124539874, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -130380,7 +130380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3995641168120117013, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4001581255889164454, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: healthUI

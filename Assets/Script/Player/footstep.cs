@@ -17,7 +17,7 @@ public class footstep : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0))
         {
             if(player.grounded)
             {

@@ -257,7 +257,7 @@ public class FirstPersonController : MonoBehaviour
         {
             // Changes isZoomed when key is pressed
             // Behavior for toogle zoom
-            if(!holdToZoom && !isSprinting && ((Input.GetKeyDown(zoomKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
+            if(!holdToZoom && !isSprinting && ((Input.GetKeyDown(zoomKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Aim") && Application.isMobilePlatform)))
             {
                 if (!isZoomed)
                 {
@@ -367,7 +367,7 @@ public class FirstPersonController : MonoBehaviour
                 Crouch();
             }
             
-            if(holdToCrouch && ((Input.GetKey(crouchKey) && !Application.isMobilePlatform) || (Input.GetButton("Crouch") && Application.isMobilePlatform)))
+            if(holdToCrouch && ((Input.GetKeyDown(crouchKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
             {
                 isCrouched = false;
                 Crouch();
@@ -448,10 +448,10 @@ public class FirstPersonController : MonoBehaviour
 
 
 
-                    if (isCrouched)
-                    {
-                        Crouch();
-                    }
+                    // if (isCrouched)
+                    // {
+                    //     Crouch();
+                    // }
 
                     if (hideBarWhenFull && !unlimitedSprint)
                     {

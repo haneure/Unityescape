@@ -2810,6 +2810,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4398930613860957491, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4398930613860957493, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
       propertyPath: m_Name
       value: TextUI (World Space)
@@ -5766,7 +5770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3538456100704288185, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
@@ -10790,7 +10794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -12197,7 +12201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2654289122120594195, guid: 099b2ec5d823f9441b07d68830c307cc, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3787517021178062741, guid: 099b2ec5d823f9441b07d68830c307cc, type: 3}
       propertyPath: m_Camera
@@ -12209,7 +12213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3787517021178062741, guid: 099b2ec5d823f9441b07d68830c307cc, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4456378893532579268, guid: 099b2ec5d823f9441b07d68830c307cc, type: 3}
       propertyPath: m_SizeDelta.x
@@ -14381,7 +14385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -16926,7 +16930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -19397,7 +19401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -21929,11 +21933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5164659997799306090, guid: bbb281d0292c9d744a580a345a0fdfaf, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5164659997799306091, guid: bbb281d0292c9d744a580a345a0fdfaf, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5164659999161148191, guid: bbb281d0292c9d744a580a345a0fdfaf, type: 3}
       propertyPath: player
@@ -29524,7 +29528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3538456100704288185, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
@@ -34484,7 +34488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -37401,7 +37405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -46011,7 +46015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -49585,7 +49589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -62157,7 +62161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -934.3025, y: -444.91333}
+  m_AnchoredPosition: {x: -934.3025, y: -444.91336}
   m_SizeDelta: {x: -989.39886, y: -986.2783}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688184536
@@ -63160,7 +63164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906301764104252172, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1906301764349279645, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_RenderMode
@@ -63168,7 +63172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906301764349279645, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1906301764400404512, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -64338,6 +64342,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4398930613860957489, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398930613860957491, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4398930613860957493, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
@@ -66565,7 +66573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -70177,7 +70185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -72864,7 +72872,7 @@ PrefabInstance:
       objectReference: {fileID: 626506278}
     - target: {fileID: 4015871616022435716, guid: 8040f198e8e738f4facc2dbd13d80bfe, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4015871616022435719, guid: 8040f198e8e738f4facc2dbd13d80bfe, type: 3}
       propertyPath: m_Name
@@ -74510,7 +74518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -80083,7 +80091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395624, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9139809631001395628, guid: 1e11d1b8837306944b22c4830b1800d9, type: 3}
       propertyPath: m_Name
@@ -81315,7 +81323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -136.28998, y: -58}
+  m_AnchoredPosition: {x: -136.29004, y: -58}
   m_SizeDelta: {x: -333.89673, y: -446.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &59506078692835608
@@ -83527,7 +83535,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 626506278}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0

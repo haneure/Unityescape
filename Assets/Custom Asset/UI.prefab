@@ -1814,7 +1814,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaveGame: Menu
+  GameIsPaused: 0
   fps: {fileID: 0}
+  holdtime: 0
   pauseMenuUI: {fileID: 2601729774592468822}
 --- !u!114 &59506079791711891
 MonoBehaviour:
@@ -1829,6 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 45dcdbf10bd28a545b338038c1f996ef, type: 2}
+  pauseMenu: {fileID: 59506079791711890}
 --- !u!114 &7391818299988235096
 MonoBehaviour:
   m_ObjectHideFlags: 0

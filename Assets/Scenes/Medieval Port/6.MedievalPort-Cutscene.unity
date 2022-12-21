@@ -69388,10 +69388,12 @@ MonoBehaviour:
     m_Bits: 256
   jumpHeight: 1
   grounded: 0
+  rigid: {fileID: 0}
   gameOverEvent: {fileID: 0}
   dialogueStatus: 0
   getHitSound: {fileID: 0}
   diedSound: {fileID: 0}
+  gameOverMusic: {fileID: 0}
   capsuleCollider: {fileID: 0}
 --- !u!114 &1725561150
 MonoBehaviour:
@@ -74312,10 +74314,12 @@ MonoBehaviour:
     m_Bits: 256
   jumpHeight: 1
   grounded: 0
+  rigid: {fileID: 0}
   gameOverEvent: {fileID: 0}
   dialogueStatus: 0
   getHitSound: {fileID: 0}
   diedSound: {fileID: 0}
+  gameOverMusic: {fileID: 0}
   capsuleCollider: {fileID: 0}
 --- !u!114 &1773358610
 MonoBehaviour:
@@ -77703,7 +77707,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 99473127}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -90296,7 +90300,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 99473127}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 0.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -90418,7 +90422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1439795298099018292, guid: 75ab5f13b98f3a248a6a8f58f3d8765e, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75ab5f13b98f3a248a6a8f58f3d8765e, type: 3}
@@ -90557,7 +90561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3538456100704288185, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}
       propertyPath: m_PlaneDistance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd81f8ab85225b945a35cea3ac9c465b, type: 3}

@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     Transform player;
     private Animator animator;
-    private Rigidbody rigid;
+    public Rigidbody rigid;
     public collidergameover gameOverEvent;
 
     public bool dialogueStatus = false;
@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     private AudioSource playerSoundSource;
     public AudioClip getHitSound;
     public AudioClip diedSound;
+    public AudioClip gameOverMusic;
 
     public CapsuleCollider capsuleCollider;
 
@@ -73,14 +74,22 @@ public class Player : MonoBehaviour
     {   
         bool previousGrounded = grounded;
         grounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer, QueryTriggerInteraction.Ignore);
-        
-        if(!previousGrounded && grounded) {
-            // Debug.Log("Do damage: " + (rigid.velocity.y < -fallThresholdVelocity));
+        //Debug.Log(rigid.velocity.y);
 
-            if(rigid.velocity.y < -fallThresholdVelocity){
+        if (!previousGrounded && grounded) {
+             Debug.Log("Do damage: " + (rigid.velocity.y < -fallThresholdVelocity));
+
+
+            if (rigid.velocity.y < -fallThresholdVelocity){
                 float damage = Mathf.Abs(rigid.velocity.y + fallThresholdVelocity) + 7;
+                //Debug.Log("fall damage: " + damage);
                 if(damage > 3) {
                     healthPoint -= damage + 7;
+                    if (healthPoint <= 0)
+                    {
+                        healthPoint = 0;
+                        gameOver();
+                    }
                 }
                 Debug.Log("Damage dealt: " + damage);
             }
@@ -212,5 +221,17 @@ public class Player : MonoBehaviour
         healthPoint = 100;
         playerSoundSource.PlayOneShot(healSfx, 0.7f);
     }
+
+    public void gameOver()
+    {
+        PlayerDied();
+        GameObject.Find("CrosshairAndStamina").SetActive(false);
+        AudioSource backgroundMusic = GameObject.Find("backgroundmusic").GetComponent<AudioSource>();
+        backgroundMusic.Stop();
+        backgroundMusic.clip = gameOverMusic;
+        backgroundMusic.Play();
+        gameOverEvent.showGameOverUI();
+    }
+
 
 }

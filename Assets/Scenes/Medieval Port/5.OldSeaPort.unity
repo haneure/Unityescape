@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: NaN, g: NaN, b: NaN, a: 1}
+  m_IndirectSpecularColor: {r: 0.29790083, g: 0.4541627, b: 0.7654497, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36410,7 +36410,7 @@ MonoBehaviour:
   throwRocksHint: {fileID: 0}
   body: {fileID: 263524231}
   face: {fileID: 1868937626}
-  fallThresholdVelocity: 20
+  fallThresholdVelocity: 10
   groundCheck: {fileID: 483944610}
   groundDistance: 0.2
   groundLayer:
@@ -36418,10 +36418,12 @@ MonoBehaviour:
     m_Bits: 256
   jumpHeight: 1
   grounded: 0
+  rigid: {fileID: 742802906}
   gameOverEvent: {fileID: 0}
   dialogueStatus: 0
   getHitSound: {fileID: 0}
   diedSound: {fileID: 0}
+  gameOverMusic: {fileID: 0}
   capsuleCollider: {fileID: 0}
 --- !u!114 &742802903
 MonoBehaviour:
@@ -65187,10 +65189,12 @@ MonoBehaviour:
     m_Bits: 256
   jumpHeight: 1
   grounded: 0
+  rigid: {fileID: 0}
   gameOverEvent: {fileID: 0}
   dialogueStatus: 0
   getHitSound: {fileID: 0}
   diedSound: {fileID: 0}
+  gameOverMusic: {fileID: 0}
   capsuleCollider: {fileID: 0}
 --- !u!114 &1348915867
 MonoBehaviour:
@@ -70626,10 +70630,12 @@ MonoBehaviour:
     m_Bits: 0
   jumpHeight: 5
   grounded: 0
+  rigid: {fileID: 0}
   gameOverEvent: {fileID: 0}
   dialogueStatus: 0
   getHitSound: {fileID: 0}
   diedSound: {fileID: 0}
+  gameOverMusic: {fileID: 0}
   capsuleCollider: {fileID: 0}
 --- !u!136 &1472982012
 CapsuleCollider:

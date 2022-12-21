@@ -5193,6 +5193,10 @@ PrefabInstance:
       propertyPath: fps
       value: 
       objectReference: {fileID: 159595711}
+    - target: {fileID: 7258505348012148107, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1492563726}
     - target: {fileID: 7258505348012148111, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_Camera
       value: 
@@ -136013,10 +136017,6 @@ PrefabInstance:
     - target: {fileID: 1745960115316492056, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283426183973015265, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
-      propertyPath: radius
-      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2283426183973015265, guid: 507b2517e0dc05d48a41ff911c2c8de4, type: 3}
       propertyPath: playerRef

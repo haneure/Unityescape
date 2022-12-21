@@ -429,7 +429,7 @@ public class FirstPersonController : MonoBehaviour
             }
 
             // All movement calculations shile sprint is active
-            if (enableSprint && ((!Application.isMobilePlatform && Input.GetKey(sprintKey)) || (Application.isMobilePlatform && Input.GetButton("Fire3"))) && sprintRemaining > 0f && !isSprintCooldown)
+            if (enableSprint && ((!Application.isMobilePlatform && Input.GetKey(sprintKey)) || (Application.isMobilePlatform && Input.GetKey(KeyCode.JoystickButton2))) && sprintRemaining > 0f && !isSprintCooldown)
             {
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
 

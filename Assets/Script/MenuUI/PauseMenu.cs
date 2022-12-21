@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Management;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -69,8 +70,27 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    private void OnApplicationPause(bool pauseStatus) {
+        if(!pauseStatus && Application.isMobilePlatform)
+        {
+            if(GameIsPaused)
+            {
+                Resume();
+            }
+            else{
+                Pause();
+            }
+        }
+    }
+
     public void Resume ()
     {
+        if(Application.isMobilePlatform)
+        {
+            InitXR();
+            XRGeneralSettings.Instance.Manager.StartSubsystems();
+        }
+            GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
         if(compassUI != null)
         {
             compassUI.SetActive(true);
@@ -86,6 +106,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause ()
     {
+        if(Application.isMobilePlatform)
+        {
+            InitXR();
+            XRGeneralSettings.Instance.Manager.StopSubsystems();
+            GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+            Camera.main.ResetAspect();
+            Camera.main.fieldOfView = 60;
+            Camera.main.ResetProjectionMatrix();
+            Camera.main.ResetWorldToCameraMatrix();
+        }
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -113,5 +143,10 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Exiting....");
         Application.Quit();
+    }
+
+    public IEnumerator InitXR()
+    {
+        yield return  XRGeneralSettings.Instance.Manager.InitializeLoader();
     }
 }

@@ -11573,7 +11573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3995641168120117013, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: m_RenderMode
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4001581255412914313, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
@@ -108628,7 +108632,7 @@ PrefabInstance:
       objectReference: {fileID: 123425875}
     - target: {fileID: 7258505348012148111, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_RenderMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7258505348012148111, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_PlaneDistance
@@ -132082,6 +132086,18 @@ PrefabInstance:
     - target: {fileID: 1140232765789223246, guid: 1aeb8be5829a13644bf1ae52d6266e98, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232084292399501398, guid: 1aeb8be5829a13644bf1ae52d6266e98, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 123425875}
+    - target: {fileID: 3232084292399501398, guid: 1aeb8be5829a13644bf1ae52d6266e98, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232084292399501398, guid: 1aeb8be5829a13644bf1ae52d6266e98, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5243397892736584620, guid: 1aeb8be5829a13644bf1ae52d6266e98, type: 3}
       propertyPath: m_Name

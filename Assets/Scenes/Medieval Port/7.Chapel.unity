@@ -3141,7 +3141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4398930613860957491, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4398930613860957493, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
       propertyPath: m_Name
@@ -67273,7 +67273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -934.3025, y: -444.91336}
+  m_AnchoredPosition: {x: -934.3025, y: -444.91333}
   m_SizeDelta: {x: -989.39886, y: -986.2783}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688184536
@@ -68538,11 +68538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96059c862c9a4fa5ba34350d65fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1713690014 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1906301763530232686, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
-  m_PrefabInstance: {fileID: 1713690009}
-  m_PrefabAsset: {fileID: 0}
 --- !u!136 &1713690015 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 1906301763577756883, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
@@ -69599,7 +69594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4398930613860957491, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4398930613860957493, guid: 57254cc7c81f49146a7550634bd81ec7, type: 3}
       propertyPath: m_Name

@@ -14,12 +14,18 @@ public class MainMenu : MonoBehaviour
     public string playGame1_5 = "5.OldSeaPort";
     public string playGame1_6 = "5.MedievalPort";
     public string playGame1_7 = "7.Chapel";
+    public Canvas mainMenu;
 
     private void Start() {
         if(Application.isMobilePlatform)
         {
+            InitXR();
             XRGeneralSettings.Instance.Manager.StopSubsystems();
+            mainMenu.renderMode = RenderMode.ScreenSpaceOverlay;
             Camera.main.ResetAspect();
+            Camera.main.fieldOfView = 60;
+            Camera.main.ResetProjectionMatrix();
+            Camera.main.ResetWorldToCameraMatrix();
         }
     }
 
@@ -44,6 +50,19 @@ public class MainMenu : MonoBehaviour
     //         }
     //     }
     // }
+
+    private void OnApplicationPause(bool pauseStatus) {
+        if(!pauseStatus && Application.isMobilePlatform)
+        {
+            InitXR();
+            XRGeneralSettings.Instance.Manager.StopSubsystems();
+            mainMenu.renderMode = RenderMode.ScreenSpaceOverlay;
+            Camera.main.ResetAspect();
+            Camera.main.fieldOfView = 60;
+            Camera.main.ResetProjectionMatrix();
+            Camera.main.ResetWorldToCameraMatrix();
+        }
+    }
 
     public IEnumerator InitXR()
     {

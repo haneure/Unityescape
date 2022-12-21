@@ -48845,7 +48845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -28.609863}
+  m_AnchoredPosition: {x: 0, y: -28.609894}
   m_SizeDelta: {x: -1387.5989, y: -949.92914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234833091
@@ -68336,7 +68336,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1906301763221544558, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 62.100006
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 1906301763577756884, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_Enabled
@@ -68416,11 +68416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906301763618696511, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 62.100006
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 1906301763789132383, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 62.100006
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 1906301764104252160, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_SortingOrder
@@ -68442,6 +68442,18 @@ PrefabInstance:
       propertyPath: m_PlaneDistance
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1906301764104252173, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906301764104252173, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906301764104252173, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 1906301764349279645, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_RenderMode
       value: 1
@@ -68452,7 +68464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906301764400404512, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 62.100006
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 1906301764469556827, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_RootOrder
@@ -68520,7 +68532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906301764905045688, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 62.100006
+      value: 350
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
@@ -68565,11 +68577,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b96059c862c9a4fa5ba34350d65fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1713690014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1906301763530232686, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
+  m_PrefabInstance: {fileID: 1713690009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!136 &1713690015 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 1906301763577756883, guid: 762ac780d654bb04f8ef827cc86b5768, type: 3}
   m_PrefabInstance: {fileID: 1713690009}
   m_PrefabAsset: {fileID: 0}
+--- !u!124 &1713690016
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713690014}
+  m_Enabled: 1
+--- !u!114 &1713690017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713690014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Device: 0
+  m_PoseSource: 2
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 1
+  m_UpdateType: 0
+  m_UseRelativeTransform: 0
 --- !u!114 &1713690019
 MonoBehaviour:
   m_ObjectHideFlags: 0

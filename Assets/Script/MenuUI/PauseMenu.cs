@@ -89,8 +89,8 @@ public class PauseMenu : MonoBehaviour
         {
             InitXR();
             XRGeneralSettings.Instance.Manager.StartSubsystems();
-        }
             GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+        }
         if(compassUI != null)
         {
             compassUI.SetActive(true);
@@ -133,6 +133,12 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Retry() {
+        if(Application.isMobilePlatform)
+        {
+            InitXR();
+            XRGeneralSettings.Instance.Manager.StartSubsystems();
+            GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
         GameIsPaused = false;

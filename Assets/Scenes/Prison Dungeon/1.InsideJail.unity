@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18296118, g: 0.22865137, b: 0.30683452, a: 1}
+  m_IndirectSpecularColor: {r: 0.18296163, g: 0.22865225, b: 0.30683574, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -47035,6 +47035,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1154016778}
     - target: {fileID: 7258505348012148111, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505348012148111, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_PlaneDistance
       value: 0.5
       objectReference: {fileID: 0}
@@ -47049,6 +47053,14 @@ PrefabInstance:
     - target: {fileID: 7258505348544855947, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 25.612976
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505348668422145, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -136.29007
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258505348668422145, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -58.000015
       objectReference: {fileID: 0}
     - target: {fileID: 7258505349291780604, guid: ecd97e7fc64024646b6b25eee07da8f9, type: 3}
       propertyPath: m_Name
@@ -130298,6 +130310,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 62.099976
       objectReference: {fileID: 0}
+    - target: {fileID: 3995641166225331534, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
+      propertyPath: jumpPower
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3995641166225331541, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: healthUI
       value: 
@@ -130368,7 +130384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3995641167535062227, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 215.53992
+      value: 215.53993
       objectReference: {fileID: 0}
     - target: {fileID: 3995641167835100239, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: m_Camera
@@ -130377,6 +130393,10 @@ PrefabInstance:
     - target: {fileID: 3995641167843684862, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3995641168120117013, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3995641168120117013, guid: 134f4886999dc5a42bd9d4a7447300a2, type: 3}
       propertyPath: m_PlaneDistance

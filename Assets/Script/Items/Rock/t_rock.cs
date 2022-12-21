@@ -16,7 +16,7 @@ public class t_rock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rockAudio.spatialBlend = 1;
     }
 
     // Update is called once per frame
@@ -51,12 +51,12 @@ public class t_rock : MonoBehaviour
             Debug.Log(other.gameObject.tag);
             if(other.gameObject.tag == "guard"){
                 guard = GameObject.Find(other.gameObject.name).GetComponent<Guard>();
-                guard.stunTime = 150;
+                guard.stunTime = 1000;
                 guard.stunned = true;
             } else if (other.transform.root.CompareTag("guard")) {
                 Debug.Log(other.transform.parent.name);
                 guard = GameObject.Find(other.transform.parent.name).GetComponent<Guard>();
-                guard.stunTime = 150;
+                guard.stunTime = 1000;
                 guard.stunned = true;
             }
         }

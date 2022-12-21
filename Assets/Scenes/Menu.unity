@@ -17120,7 +17120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Leevl 2.1
+  m_Text: Level 2.1
 --- !u!222 &1091817991
 CanvasRenderer:
   m_ObjectHideFlags: 0

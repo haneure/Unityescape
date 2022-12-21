@@ -224,9 +224,10 @@ public class GuardRefurbished : MonoBehaviour
         playerDetector.player.GetAttacked();
         if (playerDetector.player.healthPoint <= 0)
         {
+            playerDetector.player.healthPoint = 0;
             GameObject.Find("Reticle").SetActive(false);
-            playerDetector.player.PlayerDied();
-            gameOverEvent.showGameOverUI();
+            playerDetector.player.gameOver();
+            //gameOverEvent.showGameOverUI();
         }
         anim.SetTrigger("HitPlayer");
         lastAttacked = Time.time;

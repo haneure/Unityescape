@@ -84,6 +84,7 @@ public class Player : MonoBehaviour
                 float damage = Mathf.Abs(rigid.velocity.y + fallThresholdVelocity) + 7;
                 GetAttacked();
                 //Debug.Log("fall damage: " + damage);
+                GetAttacked();
                 if(damage > 3) {
                     healthPoint -= damage + 7;
                     if (healthPoint <= 0)
@@ -226,6 +227,10 @@ public class Player : MonoBehaviour
     public void gameOver()
     {
         PlayerDied();
+        if (GameObject.Find("CrosshairAndStamina") != null) {
+            GameObject.Find("CrosshairAndStamina").SetActive(false);
+        }
+        
         AudioSource backgroundMusic = GameObject.Find("backgroundmusic").GetComponent<AudioSource>();
         backgroundMusic.Stop();
         backgroundMusic.clip = gameOverMusic;

@@ -18,8 +18,9 @@ public class t_jailbarfinal : MonoBehaviour
     void Start()
     {
         // inventory = GameObject.Find("Player").GetComponent<Inventory>();
-        Debug.Log(inventori.inventory);
         jailbar = this.gameObject;
+        Debug.Log(inventori.inventory);
+
     }
 
     // Update is called once per frame
@@ -43,8 +44,8 @@ public class t_jailbarfinal : MonoBehaviour
             jailbar.SetActive(false);
             inventori.deleteFromInventory("rust_keyfinal");
             jailOpenAudio.PlayDelayed(openDelay);
-            showWinUI.showWinUI();
-            // nextScene();
+            // showWinUI.showWinUI();
+            SceneManager.LoadScene(showWinUI.nextGame);
         } else {
             Debug.Log("Kamu tidak punya kunci");
         }

@@ -1,4 +1,4 @@
-﻿// CHANGE LOG
+// CHANGE LOG
 // 
 // CHANGES || version VERSION
 //
@@ -218,32 +218,38 @@ public class FirstPersonController : MonoBehaviour
         // {
         //     anim.SetBool("Speed", false);
         // }
-        
+
         #region Camera
 
-        // Control camera movement
-        // if(cameraCanMove)
-        // {
-        //     yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+        if (Application.isMobilePlatform)
+        {
+            // hmdTrackedPoseDriver = this.GetComponent<TrackedPoseDriver>();
+            // transform.localEulerAngles = new Vector3(0, hmdTrackedPoseDriver.transform.eulerAngles.y, 0);
+        } else
+        {
+            // Control camera movement
+            if (cameraCanMove)
+            {
+                yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
-        //     if (!invertCamera)
-        //     {
-        //         pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
-        //     }
-        //     else
-        //     {
-        //         // Inverted Y
-        //         pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
-        //     }
+                if (!invertCamera)
+                {
+                    pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
+                }
+                else
+                {
+                    // Inverted Y
+                    pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
+                }
 
-        //     // Clamp pitch between lookAngle
-        //     pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+                // Clamp pitch between lookAngle
+                pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
 
-        //     transform.localEulerAngles = new Vector3(0, yaw, 0);
-        //     playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
-        // }
-        hmdTrackedPoseDriver = this.GetComponent<TrackedPoseDriver>();
-        transform.localEulerAngles = new Vector3(0, hmdTrackedPoseDriver.transform.eulerAngles.y, 0);
+                transform.localEulerAngles = new Vector3(0, yaw, 0);
+                playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+            }
+        }
+
 
         #region Camera Zoom
 
@@ -251,7 +257,7 @@ public class FirstPersonController : MonoBehaviour
         {
             // Changes isZoomed when key is pressed
             // Behavior for toogle zoom
-            if(Input.GetKeyDown(zoomKey) && !holdToZoom && !isSprinting)
+            if(!holdToZoom && !isSprinting && ((Input.GetKeyDown(zoomKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
             {
                 if (!isZoomed)
                 {
@@ -267,11 +273,11 @@ public class FirstPersonController : MonoBehaviour
             // Behavior for hold to zoom
             if(holdToZoom && !isSprinting)
             {
-                if(Input.GetKeyDown(zoomKey))
+                if((Input.GetKeyDown(zoomKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Aim") && Application.isMobilePlatform))
                 {
                     isZoomed = true;
                 }
-                else if(Input.GetKeyUp(zoomKey))
+                else if((Input.GetKeyUp(zoomKey)  && !Application.isMobilePlatform) || (Input.GetButtonUp("Aim") && Application.isMobilePlatform))
                 {
                     isZoomed = false;
                 }
@@ -345,7 +351,7 @@ public class FirstPersonController : MonoBehaviour
         #region Jump
 
         // Gets input and calls jump method
-        if(enableJump && Input.GetKeyDown(jumpKey) && player.grounded)
+        if(enableJump && ((!Application.isMobilePlatform && Input.GetKey(jumpKey)) || (Application.isMobilePlatform && Input.GetButton("Jump"))) && player.grounded)
         {
             Jump();
         }
@@ -356,17 +362,17 @@ public class FirstPersonController : MonoBehaviour
 
         if (enableCrouch)
         {
-            if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
+            if(!holdToCrouch && ((Input.GetKeyDown(crouchKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
             {
                 Crouch();
             }
             
-            if(Input.GetKeyDown(crouchKey) && holdToCrouch)
+            if(holdToCrouch && ((Input.GetKeyDown(crouchKey) && !Application.isMobilePlatform) || (Input.GetButtonDown("Crouch") && Application.isMobilePlatform)))
             {
                 isCrouched = false;
                 Crouch();
             }
-            else if(Input.GetKeyUp(crouchKey) && holdToCrouch)
+            else if(holdToCrouch && ((Input.GetKeyUp(crouchKey) && !Application.isMobilePlatform) || (Input.GetButtonUp("Crouch") && Application.isMobilePlatform)))
             {
                 isCrouched = true;
                 Crouch();
@@ -397,6 +403,11 @@ public class FirstPersonController : MonoBehaviour
         {
             // Calculate how fast we should be moving
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            if(Application.isMobilePlatform)
+            {
+                targetVelocity = playerCamera.transform.TransformDirection(targetVelocity);
+                targetVelocity = transform.InverseTransformDirection(targetVelocity);
+            }
 
             float v = Input.GetAxis("Vertical");
 
@@ -418,7 +429,7 @@ public class FirstPersonController : MonoBehaviour
             }
 
             // All movement calculations shile sprint is active
-            if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
+            if (enableSprint && ((!Application.isMobilePlatform && Input.GetKey(sprintKey)) || (Application.isMobilePlatform && Input.GetButton("Fire3"))) && sprintRemaining > 0f && !isSprintCooldown)
             {
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
 

@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class DialogueComponent {
+    public string charName;
     public TextMeshProUGUI textComponent;
     public RawImage character;
     public string lines;
     public Texture2D characterImg;
+    public UnityEvent events;
 }
 
 public class Dialogue : MonoBehaviour
@@ -25,21 +28,26 @@ public class Dialogue : MonoBehaviour
     private int textIndex;
     public GameObject UI_Inventory;
 
+    public bool showScreenHint = false;
+    public GameObject screenHint;
+    public string quest;
+
     // Start is called before the first frame update
     void Start()
     {
         index = 0;
         UI_Inventory = GameObject.Find("UI_Inventory");
 
-        //if (dialogueComponents[index].textComponent == null)
-        //{
-        //    dialogueComponents[index].textComponent = GameObject.Find("Text").GetComponent<TextMeshProUGUI>();
-        //}
+        if (dialogueComponents[index].textComponent == null)
+        {
+            dialogueComponents[index].textComponent = GameObject.Find("Text").GetComponent<TextMeshProUGUI>();
+        }
 
-        //if (dialogueComponents[index].character == null)
-        //{
-        //    dialogueComponents[index].character = GameObject.Find("CharacterImage").GetComponent<RawImage>();
-        //}
+        if (dialogueComponents[index].character == null)
+        {
+            dialogueComponents[index].character = GameObject.Find("CharacterImage").GetComponent<RawImage>();
+        }
+
         dialogueComponents[index].textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -47,11 +55,16 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if ((!Application.isMobilePlatform && (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.E))) || (Application.isMobilePlatform && Input.GetButtonDown("Fire2")))
+
         {
             if (dialogueComponents[index].textComponent.text == dialogueComponents[index].lines)
             {
                 index++;
+                if (dialogueComponents[index-1].events != null)
+                {
+                    dialogueComponents[index-1].events.Invoke();
+                }
                 NextLine();
             }
             else
@@ -89,6 +102,16 @@ public class Dialogue : MonoBehaviour
             GameObject.Find("CharacterImage").SetActive(false);
             gameObject.SetActive(false);
             UI_Inventory.SetActive(true);
+            if (quest != string.Empty)
+            {
+                string newText = quest.Replace("\\n", "\n");
+                screenHint.GetComponentInChildren<TextMeshProUGUI>().text = newText;
+            }
+            
+            if (showScreenHint == true)
+            {
+                screenHint.SetActive(true);
+            }
         }
     }
 
@@ -100,6 +123,13 @@ public class Dialogue : MonoBehaviour
             if (count == 0)
             {
                 GameObject.Find("CharacterImage").GetComponent<RawImage>().texture = dialogueComponents[index].characterImg;
+                if (dialogueComponents[index].charName == string.Empty)
+                {
+                    GameObject.Find("CharacterName").GetComponent<TextMeshProUGUI>().text = "Unity-chan";
+                } else
+                {
+                    GameObject.Find("CharacterName").GetComponent<TextMeshProUGUI>().text = dialogueComponents[index].charName;
+                }
                 count++;
             }
             dialogueComponents[index].textComponent.text += c;

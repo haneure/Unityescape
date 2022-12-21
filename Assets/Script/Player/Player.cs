@@ -225,7 +225,10 @@ public class Player : MonoBehaviour
     public void gameOver()
     {
         PlayerDied();
-        GameObject.Find("CrosshairAndStamina").SetActive(false);
+        if (GameObject.Find("CrosshairAndStamina") != null) {
+            GameObject.Find("CrosshairAndStamina").SetActive(false);
+        }
+        
         AudioSource backgroundMusic = GameObject.Find("backgroundmusic").GetComponent<AudioSource>();
         backgroundMusic.Stop();
         backgroundMusic.clip = gameOverMusic;

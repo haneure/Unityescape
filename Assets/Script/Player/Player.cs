@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
             if (rigid.velocity.y < -fallThresholdVelocity){
                 float damage = Mathf.Abs(rigid.velocity.y + fallThresholdVelocity) + 7;
                 //Debug.Log("fall damage: " + damage);
+                GetAttacked();
                 if(damage > 3) {
                     healthPoint -= damage + 7;
                     if (healthPoint <= 0)

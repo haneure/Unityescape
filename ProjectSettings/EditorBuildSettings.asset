@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: f52d298d05804a64880dd4f731a9cc6b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Old Sea Port.unity
     guid: e3dc763260288be4bac1a6cd8605b4e8
   - enabled: 1
@@ -21,11 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Prison Dungeon/3.DownstairJail.unity
     guid: e0c9f60a9328aea46a961cfd107e02b4
   - enabled: 1
-    path: Assets/Scenes/Prison Dungeon/4.DeepTunnel.unity
-    guid: 45d3a0732d400794bbff349f7bffdf7b
-  - enabled: 1
     path: Assets/Scenes/Medieval Port/4.DeepTunnelNew.unity
     guid: 471e6315f437ee74ab10426e63788e91
+  - enabled: 1
+    path: Assets/Scenes/Medieval Port/5.OldSeaPort-Cutscene.unity
+    guid: e7dab41fb5b433744a404690b132a40c
   - enabled: 1
     path: Assets/Scenes/Medieval Port/5.OldSeaPort.unity
     guid: 0af9be4a3cacea2499b66602f3850e18
